@@ -1,1 +1,4 @@
+.. autosummary::
+   :toctree: generated
 
+   MiFoDB
