@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'inStrain'
-copyright = '2019, Matt Olm and Alex Crits-Christoph'
-author = 'Matt Olm and Alex Crits-Christoph'
+project = 'MiFoDB'
+copyright = '2023, Elisa Caffrey and Matt Olm'
+author = 'Elisa Caffrey and Matt Olm'
 master_doc = 'index'
 
 # The full version, including alpha/beta/rc tags
