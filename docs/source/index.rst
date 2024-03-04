@@ -20,5 +20,5 @@ Contents
 
    overview
    installation
-   example output
-   advanced use
+   example_output
+   advanced_use
