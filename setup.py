@@ -14,7 +14,7 @@ setup(name='MiFoDB',
       package_data={'MiFoDB': ['helper_files/NullModel.txt']},
       #packages=['MiFoDB'],
       packages=find_packages(exclude=["tests"]),
-      scripts=['bin/inStrain'],
+      scripts=['bin/MiFoDB'],
       python_requires='>=3.4.0',
       install_requires=[
           'numpy',
