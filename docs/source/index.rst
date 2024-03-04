@@ -10,10 +10,13 @@ how to :ref:`installation` the project.
 
    This project is under active development.
 
+Comments and suggestions can be sent to `Elisa Caffrey <ecaffrey@stanford.edu>`_
+
 Contents
 --------
 
 .. toctree::
+   :maxdepth: 2
 
    overview
    installation
