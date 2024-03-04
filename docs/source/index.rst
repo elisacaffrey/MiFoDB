@@ -21,4 +21,4 @@ Contents
    overview
    installation
    example_output
-   advanced_use
+   acknowledgements
