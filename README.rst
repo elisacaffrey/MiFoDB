@@ -1,9 +1,9 @@
 Template for the Read the Docs tutorial
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+# Data supporting publication: MiFoDB: A microbial food metagenomics reference database
+Link to Zenodo archive: https://zenodo.org/deposit/8144860
 
-Read the tutorial here:
+This upload contains several datasets to support the publication "MiFoDB: A microbial food metagenomics reference database", including genomes, mapping databases, and other relevant data. The preprint publication is available on bioRxiv. The citation for the peer-reviewed publication is not yet available as the time of this upload.
 
-https://docs.readthedocs.io/en/stable/tutorial/
+# Content Directory
