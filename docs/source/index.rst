@@ -1,4 +1,4 @@
-Welcome to MiFoDB's documentation!
+Welcome to MiFoDB's documentation
 ===================================
 
 **MiFoDB** is a workflow for the identification of microbes associated with food fermentation.
