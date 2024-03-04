@@ -10,7 +10,7 @@ To use MiFoDB, first install it using pip:
 
 .. code-block:: console
 
-   (.venv) $ pip install lumache
+   (.venv) $ pip install mifodb
 
 Creating recipes
 ----------------
