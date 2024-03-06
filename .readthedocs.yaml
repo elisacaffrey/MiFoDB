@@ -11,5 +11,4 @@ python:
 
 sphinx:
   configuration: docs/source/conf.py
-
-extra_css: [extra.css]
+  extra_css: [extra.css]
