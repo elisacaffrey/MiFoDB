@@ -9,11 +9,6 @@ MiFoDB workflow was developed by `Elisa Caffrey <ecaffrey@stanford.edu>`_ and
 
 Special thanks to all those who have contribute samples, including Hannah Wastyk, Dario Barbone, Claire Clayton, Sandor Katz, Mara King, Macklin Casnoff, Laura Krum, Aruna Lee, Clara Lee, Brent Mateaux, Danny Ramos, Cody Reiss, Natalie Schrauwen, Richard Shover, Adam Strozyk, Will Tospern, Lorenzo Campedelli, and Ignazio Benedetti. 
 
-Software
-+++++++++++++++++++++++++
-
-MiFoDB  relies on several previously published programs and python modules to run.
-
 Citation
 +++++++++++++++++++++++++
 
