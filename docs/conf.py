@@ -54,7 +54,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # html_theme = 'alabaster'
 
 html_css_files = [
-    'css/custom.css',
+    'source/css/custom.css',
 ]
 
 # Add any paths that contain custom static files (such as style sheets) here,
