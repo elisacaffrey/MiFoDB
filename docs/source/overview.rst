@@ -4,6 +4,6 @@ Overview
 The MiFoDB Workflow
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. figure:: source/GitHub.png
+.. figure:: GitHub.png
   :width: 400px
   :align: center
