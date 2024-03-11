@@ -7,30 +7,18 @@ While the latest version of MiFoDB (`MiFoDB_beta_v2 <https://docs.google.com/spr
 
 There are a few recommended ways of doing this, depending on genome type. 
 
-**1. Adding prokaryote genomes** 
-**2. Adding eukaryote genomes.**
-**3. Adding substrate genomes.**
+1. Identifying and adding prokaryote genomes
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Identification of unmapped prokaryote genomes missing from the database can easily be done using`sylph <https://github.com/bluenote-1577/sylph>`_, an ultrafast metagenomic profiler for metagenomic shotgun samples based on a pre-sketched GTDB r214 database. GTDB (`Genome Taxonomic Database <https://gtdb.ecogenomic.org/>`_) is a database which uses RefSeq and GenBank genomes to standardize microbial taxonomy, while incorporating independent quality control checks. For more information about GTDB, 'see their website <https://gtdb.ecogenomic.org/about>`_.
 
-work directory file-tree
-+++++++++++++++++++++++++
 
-::
 
-  workDirectory
-  ./data
-  ...../checkM/
-  ...../Clustering_files/
-  ...../gANI_files/
-  ...../MASH_files/
-  ...../ANIn_files/
-  ...../prodigal/
-  ./data_tables
-  ...../Bdb.csv  # Sequence locations and filenames
-  ...../Cdb.csv  # Genomes and cluster designations
-  ...../Chdb.csv # CheckM results for Bdb
-  ...../Mdb.csv  # Raw results of MASH comparisons
-  ...../Ndb.csv  # Raw results of ANIn comparisons
-  ...../Sdb.csv  # Scoring information
+2. Adding euakaryote genomes
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+3. Adding substrate genomes
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 Functional Analysis
 ------------------------------
