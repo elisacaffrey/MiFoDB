@@ -25,7 +25,7 @@ We will be using two specific BBTools
 
 `bbmap <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbmap-guide/>`_: removed human reads
 
-
+-----------
 **Expected input: ** Raw paired end reads (ex. ending in R1.fastq.gz and R2.fastq.gz)
 **Expected output: ** Trimmed paired end reads (ex. ending in _1.trim.fastq.gz and _2.trim.fastq.gz)
 
