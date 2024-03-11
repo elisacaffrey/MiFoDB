@@ -13,9 +13,14 @@ Identification of unmapped prokaryote genomes missing from the database can easi
 
 The sylph output returns a list of identified microbes and their abundance. Comparing the sylph output to the MiFoDB output will allow for the identification of microbes not included in the current MiFoDB database. In addition, for ease of use we recommend filtering sylph results to only incorporate microbes with a reported abundance >1% and/or reported presence in more than one sample.
 
-Details on the use of sylph can be found on their page `Taxonomic profiling with the GTDB‐R214 database <https://github.com/bluenote-1577/sylph/wiki/Taxonomic-profiling-with-the-GTDB%E2%80%90R214-database>`_.
+Details on the use of sylph can be found on their page `Taxonomic profiling with the GTDB‐R214 database <https://github.com/bluenote-1577/sylph/wiki/Taxonomic-profiling-with-the-GTDB%E2%80%90R214-database>`_, summarized here:
+
+1. We recommend create a sylph environment using
+$ conda create -n sylph_env python=3.8
+$ conda activate sylph_env
 
 
+For questions about sylph, contact the sylph authors. 
 
 
 
