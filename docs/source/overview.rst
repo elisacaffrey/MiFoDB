@@ -11,7 +11,7 @@ The above figure shows a visual representation of the MiFoDB workflow, including
 
 
 Glossary & FAQ
-==========================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Glossary of terms used in MiFoDB
 ------------------------------------
