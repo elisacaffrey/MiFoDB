@@ -25,6 +25,7 @@ We will be using two specific BBTools
 
 `bbmap <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbmap-guide/>`_: removed human reads
 
+____________________________
 
 Assembly
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
