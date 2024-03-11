@@ -1,6 +1,8 @@
 Quick Start
 ===================
 This workflow will walk you through the steps needed to go from getting your data back from a sequencing facility to having a profiled list of genomes with the mapped relative abundances.
+As an example, we can use reads from a sample of pikliz, a Haitian ferment with cabbage, carrots, bell peppers and Scotch bonnet peppers, produced in Montana, USA.
+
 
 Pre-processing
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -12,7 +14,7 @@ Before being able to use the data, you will need to:
 
 **3.** Remove any potential contaminating human genomes (this is less of a problem with fermented foods, but a huge deal when collecting human stool samples packed with the donors DNA)
 
-For step 1., we can use `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_, which reports quality control checks on raw sequence data
+For step 1. we can use `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_, which reports quality control checks on raw sequence data
 
 For steps 2. and 3. we can use `BBTools <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/>`_, a suite of tools used for DNA and RNA sequencing analysis.
 We will be using two specific BBTools
