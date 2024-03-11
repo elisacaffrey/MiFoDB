@@ -15,9 +15,11 @@ The sylph output returns a list of identified microbes and their abundance. Comp
 
 Details on the use of sylph can be found on their page `Taxonomic profiling with the GTDB‐R214 database <https://github.com/bluenote-1577/sylph/wiki/Taxonomic-profiling-with-the-GTDB%E2%80%90R214-database>`_, summarized here:
 
-**1. We recommend create a sylph environment using** ::
-  $ conda create -n sylph_env python=3.8
-  $ conda activate sylph_env
+**1. We recommend create a sylph environment using** 
+::
+
+  $  conda create -n sylph_env python=3.8
+  $  conda activate sylph_env
 
 
 For questions about sylph, contact the sylph authors. 
