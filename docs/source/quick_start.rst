@@ -26,12 +26,19 @@ We will be using two specific BBTools
 `bbmap <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbmap-guide/>`_: removed human reads
 
 ____________________________
+**Expected input: ** Raw paired end reads (ex. ending in R1.fastq.gz and R2.fastq.gz)
+**Expected output: ** Trimmed paired end reads (ex. ending in _1.trim.fastq.gz and _2.trim.fastq.gz)
 
 **1.** Download the raw reads
 ::
  $  wget EBC_087_S160_L003_R1.fastq.gz
  $  wget EBC_087_S160_L003_R2.fastq.gz
 
+**2.** Perform FastQC
+
+**3.** Perform BBTools
+
+**4.** Save output to `processed_reads` directory
 
 Assembly
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
