@@ -24,5 +24,5 @@ Contents
    overview
    quick_start
    example_output
-   advance_use
+   advanced_use
    acknowledgements
