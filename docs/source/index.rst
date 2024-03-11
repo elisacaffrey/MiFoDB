@@ -20,6 +20,6 @@ Contents
    :maxdepth: 2
 
    overview
-   installation
+   quick_start
    example_output
    acknowledgements
