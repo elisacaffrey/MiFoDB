@@ -9,7 +9,7 @@ Before being able to use the data, you will need to:
 2. Remove any potential contaminating human genomes (this is less of a problem with fermented foods, but a huge deal when collecting human stool samples packed with the donors DNA)
 3. Perform QC metrics to get a sense of the sequencing quality
 
-For steps 1. and 2. we can use `BBTools <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/>_`
+For steps 1. and 2. we can use `BBTools <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/>`_
 
 
 
