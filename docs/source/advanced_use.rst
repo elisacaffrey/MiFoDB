@@ -21,6 +21,10 @@ Details on the use of sylph can be found on their page `Taxonomic profiling with
   $  conda create -n sylph_env python=3.8
   $  conda activate sylph_env
 
+Select a database (see sylph documentation for appropriate selection)
+  $  wget https://storage.googleapis.com/sylph-stuff/v0.3-c1000-gtdb-r214.syldb -O gtdb_database_c1000.syldb
+or
+  $  wget https://storage.googleapis.com/sylph-stuff/v0.3-c200-gtdb-r214.syldb -O gtdb_database_c200.syldb
 
 For questions about sylph, contact the sylph authors. 
 
