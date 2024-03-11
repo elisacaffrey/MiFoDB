@@ -16,7 +16,7 @@ Pre-processing
 
 **#. Perform FastQC**
 First, you will want to use `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_ to perform quality control checks on raw sequence data
-
+A great FastQC tutorial is available here: https://genomicsaotearoa.github.io/metagenomics_summer_school/day1/ex2_quality_filtering/#loading-fastqc
 
 **#. Perform BBTools**
 Second, use BBTools to trim any sequencing adapters so that you are left with just reads from your original sample, and toemove any potential contaminating human genomes (this is less of a problem with fermented foods, but a huge deal when collecting human stool samples packed with the donors DNA) by using:
