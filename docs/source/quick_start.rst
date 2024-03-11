@@ -27,9 +27,10 @@ We will be using two specific BBTools
 
 ____________________________
 
-**1.** Download the raw reads::
-$  wget EBC_087_S160_L003_R1.fastq.gz
-$  wget EBC_087_S160_L003_R2.fastq.gz
+**1.** Download the raw reads
+::
+ $  wget EBC_087_S160_L003_R1.fastq.gz
+ $  wget EBC_087_S160_L003_R2.fastq.gz
 
 
 Assembly
