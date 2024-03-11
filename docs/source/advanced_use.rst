@@ -1,7 +1,7 @@
 Advanced Use
 ============
 
-Accessing Internal Information
+Strain tracking
 ------------------------------
 
 All of internal information is stored in the work directory
@@ -26,3 +26,10 @@ work directory file-tree
   ...../Mdb.csv  # Raw results of MASH comparisons
   ...../Ndb.csv  # Raw results of ANIn comparisons
   ...../Sdb.csv  # Scoring information
+
+Functional Analysis
+------------------------------
+
+
+Gene Profiling
+------------------------------
