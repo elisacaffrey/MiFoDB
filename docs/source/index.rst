@@ -1,9 +1,11 @@
 Welcome to MiFoDB
 ===================================
 
-**MiFoDB** is a workflow for the alignment-based profiling of microbes associated with microbial foods.
-This workflow includes a tripartite database (MiFoDB_v2), as well as details to expand and build an alignment based database. 
-In addition to high accuracy profiling results, MiFoDB's incorporation into the `InStrain (Olm et al. 2021) <https://instrain.readthedocs.io/en/latest/index.html>`_ framework allows for strain tracking, functional analysis, and gene profiling within the same workflow.
+**MiFoDB** is a workflow designed for the alignment-based profiling of microbes associated with microbial foods.
+This workflow includes instructions on how to analyze your own fermented food samples from the raw sequencing data to profiling the results and downstream analysis.
+We inlude a tripartite database (MiFoDB), as well as details to expand and/or build your own an alignment based database. 
+
+In addition to high accuracy and low false positive profiling results, MiFoDB's incorporation into the `InStrain (Olm et al. 2021) <https://instrain.readthedocs.io/en/latest/index.html>`_ framework allows for strain tracking, functional analysis, and gene profiling within the same workflow.
 
 Check out the :doc:`overview` section for further information.
 
@@ -22,4 +24,5 @@ Contents
    overview
    quick_start
    example_output
+   advance_use
    acknowledgements
