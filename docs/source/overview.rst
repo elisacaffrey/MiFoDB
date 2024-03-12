@@ -36,7 +36,7 @@ There are three main methods currently used for metagenome profiling, each with 
 
 .. csv-table:: **#. Marker-based** 
 
-  Advantages,Disadvantages
+  **Advantages**,**Disadvantages**
   Fast, Poor identification of genomes without markers
   High accuracy for specific markers, High-false positive rate
   ,No markers for novel microbes
