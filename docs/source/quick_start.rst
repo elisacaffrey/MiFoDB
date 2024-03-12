@@ -58,12 +58,20 @@ Profiling
  $  mamba create -n instrain_env -c bioconda instrain
  $  conda activate instrain_env
 
+Install instrain
+::
+ $  pip install instrain
+
 Install samtools to create your .bam file from the reference .fasta
 ::
  $  conda install -c bioconda bowtie2 samtools
 
-**2. Download the reference database .fasta and .stb files**
+For more information on installation, visit `inStrain <https://instrain.readthedocs.io/en/latest/installation.html>`_ or Bowtie2 `<https://bowtie-bio.sourceforge.net/bowtie2/manual.shtml>`_
+
+**2. Download the reference databases**
+For each database (prokaryote, eukaryote, or substrate), download the .fasta and .stb file.
+``for prokaryote, make sure to also download the .genes file``
 ::
- $  bowtie2-build reference.fasta reference_index
+ $  bowtie2-build MiFoDB_beta_v2_prok.fasta MiFoDB_prok_v2_index
 
 
