@@ -25,7 +25,7 @@ K-mer based methods (i.e. Clark, Kraken, Kaiju) use short exact matching substri
 
 **3. Alignment based** 
 
-Alignment based methods (i.e. InStrain) use a database to directly match sample reads to a genome reference database, while taking SNPs into account. While this results in high-accuracy and low false-positive rates, this method is more computationally intensive than marker based and k-mer based methods. However, reults from aligmnet based profiling can be easily used for functional analysis, strain tracking, and gene profiling. In addition, reporting of unmapped and low quality reads give a clear picture of how much of the sample is accurately profiled, and allows for the identification of novel genomes. For more information about inStrain, check out the inStrain `Important Concepts <https://instrain.readthedocs.io/en/latest/important_concepts.html>`_ page.
+Alignment based methods (i.e. InStrain) use a database to directly match sample reads to a genome reference database, while taking SNPs into account. While this results in high-accuracy and low false-positive rates, this method is more computationally intensive than marker based and k-mer based methods. However, reults from aligmnet based profiling can be easily used for functional analysis, strain tracking, and gene profiling. In addition, reporting of unmapped and low quality reads give a clear picture of how much of the sample is accurately profiled, and allows for the identification of novel genomes. For more information about inStrain, see inStrain `Important Concepts <https://instrain.readthedocs.io/en/latest/important_concepts.html>`_ page.
 
 *Which microbes are included in MiFoDB?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -37,17 +37,17 @@ MiFoDB design included use of dRep, which compared input genomes to include only
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Downstream uses for MiFoDB results include:
 
-* **Strain tracking:** using instrain compare, in an unbiased manner we can identify strains that are shared between samples. Strain identification is based on 99.999% popANI and ≥50% percent_genome_compared, calculated during 
-
-For detailed, accurate, microdiversity-aware strain-level comparisons between organisms detected across multiple unbiased metagenomic samples. Strain identification is based on 99.9999% ANI
+* **Strain tracking:** using instrain compare, in an unbiased manner we can identify detailed, accurate, microdiversity-aware strains that are shared between samples. Strain identification is based on 99.999% popANI and ≥50% percent_genome_compared, which are dependant on the instrain profile run. For more infomation, see see inStrain `Important Concepts <https://instrain.readthedocs.io/en/latest/important_concepts.html>`_.
 
 * **Gene-based annotation:** Results can be easily used for functional analyses, including gene annotations based on `KEGG Orthologies <https://www.genome.jp/tools/kofamkoala/>`_, `Carbohydrate-Active enZYmes (CAZymes) <http://www.cazy.org/>`_, `Pfam <http://pfam.xfam.org/>`_, and `antibiotic resistant genes <https://card.mcmaster.ca/download>`_. 
 
 *Why do I not have <100% samples mapped?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-MiFoDB allows for the calculation of mapped reads compared to the total trimmed reads, which also means that the percent of unmapped reads is reported. What are the unmapped reads? Because we use a reference database, unmapped reads might include genomes not in the database, poor quality genomes, or poorly assembled genomes. 
+MiFoDB allows for the calculation of mapped reads compared to the total trimmed reads, allowing for the reporting of both mapped and unmapped reads. 
 
-Considering the typically lower absolute mapping success of complex soil microbiome, and high abundance of well studied infant gut microbiome samples, fermented food sample mapping reflects an expected middle ground in diversity, being less diverse than the soil, but underexplored compared to the gut microbiome. 
+**What are the unmapped reads?** 
+
+Because we use a reference database, unmapped reads might include genomes not in the database, poor quality genomes, or poorly assembled genomes. Considering the typically lower absolute mapping success of complex soil microbiome, and high abundance of well studied infant gut microbiome samples, fermented food sample mapping reflects an expected middle ground in diversity, being less diverse than the soil, but underexplored compared to the gut microbiome. 
 
 **How can I increase my mapped genome abundance?**
 There are a few methods to help increase the percentage of mapped genomes:
