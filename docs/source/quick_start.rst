@@ -9,16 +9,21 @@ Pre-processing
 **Expected input: ** Raw paired end reads (ex. ending in R1.fastq.gz and R2.fastq.gz)
 **Expected output: ** Trimmed paired end reads (ex. ending in _1.trim.fastq.gz and _2.trim.fastq.gz)
 
-**#.** Download the raw reads
+**1.** Download the raw reads
 ::
  $  wget EBC_087_S160_L003_R1.fastq.gz
  $  wget EBC_087_S160_L003_R2.fastq.gz
 
-**#. Perform FastQC**
-First, you will want to use `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_ to perform quality control checks on raw sequence data
+**2. Perform FastQC**
+First, you will want to use `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_ to perform quality control checks on raw sequence data.
+We recommend setting up a conda environment:
+  $ conda create -n fastqc_env python=3.8
+
+
+
 A great FastQC tutorial is available here: https://genomicsaotearoa.github.io/metagenomics_summer_school/day1/ex2_quality_filtering/#loading-fastqc
 
-**#. Perform BBTools**
+**3. Perform BBTools**
 Second, use BBTools to trim any sequencing adapters so that you are left with just reads from your original sample, and toemove any potential contaminating human genomes (this is less of a problem with fermented foods, but a huge deal when collecting human stool samples packed with the donors DNA) by using:
 
 * `bbduk <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbduk-guide/>`_: for the trimming and filtering of adapters and contaminants in your reads
@@ -29,18 +34,11 @@ Second, use BBTools to trim any sequencing adapters so that you are left with ju
 
 **#.** Save output to ``processed_reads`` directory
 
-Assembly
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-MegaHIT
-
-
-Binning
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-MetaBAT2
-EukRep
-
 Profiling
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-InStrain
+**Expected input: ** Trimmed pair-end reads (in your processed_reads directory. Should end in R1.fastq.gz and R2.fastq.gz)
+**Expected output: ** .IS file output for each sample with genome profiling results
+
+
 
 
