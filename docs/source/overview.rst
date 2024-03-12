@@ -5,7 +5,7 @@ The MiFoDB Workflow
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. figure:: figures/MiFoDB_workflow.png
-  :width: 400px
+  :width: 800px
   :align: center
 *The above figure shows a visual representation of the MiFoDB workflow, including pre-processing, assembly, binning, and alignment-based profiling.*
 
