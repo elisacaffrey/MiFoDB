@@ -41,7 +41,6 @@ There are three main methods currently used for metagenome profiling, each with 
   High accuracy for specific markers, High-false positive rate
   No markers for novel microbes, Reports scaled mapped abundance
 
-    N5
 *What an I do with MiFoDB results?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
