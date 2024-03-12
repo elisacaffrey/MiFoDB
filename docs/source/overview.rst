@@ -42,6 +42,22 @@ There are three main methods currently used for metagenome profiling, each with 
   ,No markers for novel microbes
   ,Reports scaled mapped abundance
 
+.. csv-table:: **#. Kmer-based** 
+
+  **Advantages**,**Disadvantages**
+  Fast, Lower recall (SNP can lead to mismatch k-mer
+  ,Lower accuracy at lower taxonomic lengths (share larger k-mer regions) 
+  ,High-false positive rate
+
+.. csv-table:: **#. Alignment-based** 
+
+  **Advantages**,**Disadvantages**
+  High accuracy, Reference dependent
+  Lowe false positive rates,More computationally demanding
+  Functional insight,
+  Strain tracking,
+  Allows for gene profiling,
+
 *What an I do with MiFoDB results?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
