@@ -37,7 +37,9 @@ MiFoDB design included use of dRep, which compared input genomes to include only
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Downstream uses for MiFoDB results include:
 
-* **inStrain_compare:** For detailed, accurate, microdiversity-aware strain-level comparisons between organisms detected across multiple unbiased metagenomic samples. Strain identification is based on 99.9999% ANI
+* **Strain tracking:** using instrain compare, in an unbiased manner we can identify strains that are shared between samples. Strain identification is based on 99.999% popANI and ≥50% percent_genome_compared, calculated during 
+
+For detailed, accurate, microdiversity-aware strain-level comparisons between organisms detected across multiple unbiased metagenomic samples. Strain identification is based on 99.9999% ANI
 
 * **Gene-based annotation:** Results can be easily used for functional analyses, including gene annotations based on `KEGG Orthologies <https://www.genome.jp/tools/kofamkoala/>`_, `Carbohydrate-Active enZYmes (CAZymes) <http://www.cazy.org/>`_, `Pfam <http://pfam.xfam.org/>`_, and `antibiotic resistant genes <https://card.mcmaster.ca/download>`_. 
 
