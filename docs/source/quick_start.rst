@@ -26,7 +26,7 @@ We recommend setting up a conda environment:
 Finally, create your ``output_directory`` and run fastqc on your reads:
 ::
  $  fastqc EBC_087_S160_L003_R1.fastq.gz EBC_087_S160_L003_R2.fastq.gz -o EBC_087_output_directory
-``this process should take ~x/sample``
+`this process should take ~x/sample`
 
 A great FastQC tutorial is available here: https://genomicsaotearoa.github.io/metagenomics_summer_school/day1/ex2_quality_filtering/#loading-fastqc
 
