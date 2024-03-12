@@ -79,11 +79,18 @@ For each database (prokaryote, eukaryote, or substrate), download the .fasta and
 You only have to do this once for each database version. Make sure to always use the .bam file mad from the same version of the database .fasta file.
 ::
  $  bowtie2-build MiFoDB_beta_v2_prok.fasta MiFoDB_prok_v2_index
+ $  bowtie2 -x MiFoDB_prok_v2_index -1 EBC_087_S160_L003_R1.fastq.gz -2 EBC_087_S160_L003_R2.fastq.gz -S EBC_087_aligned_reads.sam
+
+Finally, you will need to convert the SAM file to a BAM file and index the sorted BAM
+::
+ $  samtools view -Sb EBC_087_aligned_reads.sam > EBC_087_aligned_reads.bam
+ $  samtools sort EBC_087_aligned_reads.bam -o EBC_087_sort_aligned_reads.bam
+ $  samtools index EBC_087_sort_aligned_reads.bam
 
 **3. Run inStrain**
 
 Now that you have your .bam, .fasta, .stb files and inStrain installed, you can run inStrain profile
 ::
- $  inStrain profile MiFoDB_prok_v2_index.bam genomefile.fasta -o outputlocation.IS -p 6 -g genesfile.fasta
+ $  inStrain profile EBC_087_sort_aligned_reads.bam MiFoDB_beta_v2_prok.fasta -o EBC_087.IS -p 6 -g genesfile.fasta --stb_file MiFoDB_beta_v2_prok.stb --genes_file MiFoDB_beta_v2_prok.genes.fna --instrain_profile_args --database_mode
 
-
+The output will be a .IS file, with a number of .tsv file. We will be most intereste in genome_info.tsv, which includes all mapping information. For interpretation and analysis, see `example output <https://mifodb.readthedocs.io/en/latest/example_output.html>`_.
