@@ -69,9 +69,21 @@ Install samtools to create your .bam file from the reference .fasta
 For more information on installation, visit `inStrain <https://instrain.readthedocs.io/en/latest/installation.html>`_ or Bowtie2 `<https://bowtie-bio.sourceforge.net/bowtie2/manual.shtml>`_
 
 **2. Download the reference databases**
+
 For each database (prokaryote, eukaryote, or substrate), download the .fasta and .stb file.
+
 ``for prokaryote, make sure to also download the .genes file``
+
+**3. Make your .bam file**
+
+You only have to do this once for each database version. Make sure to always use the .bam file mad from the same version of the database .fasta file.
 ::
  $  bowtie2-build MiFoDB_beta_v2_prok.fasta MiFoDB_prok_v2_index
+
+**3. Run inStrain**
+
+Now that you have your .bam, .fasta, .stb files and inStrain installed, you can run inStrain profile
+::
+ $  inStrain profile MiFoDB_prok_v2_index.bam genomefile.fasta -o outputlocation.IS -p 6 -g genesfile.fasta
 
 
