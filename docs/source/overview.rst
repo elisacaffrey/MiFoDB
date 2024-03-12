@@ -48,7 +48,7 @@ Alignment based methods (i.e. InStrain) use a database to directly match sample 
 
 *What an I do with MiFoDB results?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-MiFoDB is based on inStrain profiling, so output will be the same as described in  `inStrain profile <https://instrain.readthedocs.io/en/latest/example_output.html#instrain-profile>`_. The most important output files is ``genome_info.tsv``. For example:
+MiFoDB is based on inStrain profiling, so output will be the same as described in  `inStrain profile <https://instrain.readthedocs.io/en/latest/example_output.html#instrain-profile>`_. For every sample, there will be a number of inStrain output files (`detailed here <https://instrain.readthedocs.io/en/latest/example_output.html#instrain-profile>`_), but the most important output files is ``genome_info.tsv``. For example:
 
 .. csv-table:: genome_info.tsv
 
