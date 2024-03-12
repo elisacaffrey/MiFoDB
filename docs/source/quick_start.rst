@@ -11,7 +11,7 @@ Pre-processing
 
 **Expected output:** Trimmed paired end reads (ex. ending in _1.trim.fastq.gz and _2.trim.fastq.gz)
 
-**1.** Download the raw reads
+**1. Download the example raw reads**
 ::
  $  wget EBC_087_S160_L003_R1.fastq.gz
  $  wget EBC_087_S160_L003_R2.fastq.gz
@@ -47,9 +47,21 @@ Second, use BBTools to trim any sequencing adapters so that you are left with ju
 
 Profiling
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-**Expected input: ** Trimmed pair-end reads (in your processed_reads directory. Should end in R1.fastq.gz and R2.fastq.gz)
-**Expected output: ** .IS file output for each sample with genome profiling results
+**Expected input:** Trimmed pair-end reads (in your processed_reads directory. Should end in R1.fastq.gz and R2.fastq.gz)
 
+**Expected output:** .IS file output for each sample with genome profiling results
 
+**1. Set up your environment**
+::
+ $  mamba create -n instrain_env -c bioconda instrain
+ $  conda activate instrain_env
+
+Install samtools to create your .bam file from the reference .fasta
+::
+ $  conda install -c bioconda bowtie2 samtools
+
+**2. Download the reference database .fasta and .stb files**
+::
+ $  bowtie2-build reference.fasta reference_index
 
 
