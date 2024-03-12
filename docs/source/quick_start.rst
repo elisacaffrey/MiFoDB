@@ -29,7 +29,7 @@ We recommend setting up a conda environment:
 Finally, create your ``output_directory`` and run fastqc on your reads:
 ::
  $  fastqc EBC_087_S160_L003_R1.fastq.gz EBC_087_S160_L003_R2.fastq.gz -o EBC_087_output_directory
-*this process should take ~5-7/sample*
+*this process should take ~5-7min/sample*
 
 The output for this step includes .html files with QC information for each read, and .fastqc.zip files with basic sequencing statistics.
 
