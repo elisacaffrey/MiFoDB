@@ -34,18 +34,16 @@ FAQ
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 There are three main methods currently used for metagenome profiling, each with advantages and disadvantages:
 
-.. list-table:: **#. Marker-based** 
-   :widths: 25 25 50
-   :header-rows: 1
+.. csv-table:: **#. Marker-based** 
 
-   * - Advantages
-     - Disadvantages
-   * - Fast
-     - Poor identification of genomes without markers
-   * - High accuracy for specific markers
-     - High-false positive rate
-   * - No markers for novel microbes 
-     - High-false positive rate
+Advantages,Disadvantages
+
+Fast, Poor identification of genomes without markers
+
+High accuracy for specific markers, High-false positive rate
+
+No markers for novel microbes, Reports scaled mapped abundance
+
 
 *What an I do with MiFoDB results?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
