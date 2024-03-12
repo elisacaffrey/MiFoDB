@@ -7,7 +7,7 @@ The MiFoDB Workflow
 .. figure:: GitHub.png
   :width: 400px
   :align: center
-``The above figure shows a visual representation of the MiFoDB workflow, including pre-processing, assembly, binning, and alignment-based profiling.``
+*The above figure shows a visual representation of the MiFoDB workflow, including pre-processing, assembly, binning, and alignment-based profiling.*
 
 
 Glossary & FAQ
@@ -32,7 +32,20 @@ FAQ
 ------------------------------------
 *Why use alignment-based profiling?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+There are three main methods currently used for metagenome profiling, each with advantages and disadvantages:
 
+.. list-table:: **#. Marker-based** 
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Advantages
+     - Disadvantages
+   * - Fast
+     - Poor identification of genomes without markers
+   * - High accuracy for specific markers
+     - High-false positive rate
+   * - No markers for novel microbes 
+     - High-false positive rate
 
 *What an I do with MiFoDB results?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
