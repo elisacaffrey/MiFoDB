@@ -6,8 +6,10 @@ As an example, we can use reads from a sample of pikliz, a Haitian ferment with 
 
 Pre-processing
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-**Expected input: ** Raw paired end reads (ex. ending in R1.fastq.gz and R2.fastq.gz)
-**Expected output: ** Trimmed paired end reads (ex. ending in _1.trim.fastq.gz and _2.trim.fastq.gz)
+
+**Expected input:** Raw paired end reads (ex. ending in R1.fastq.gz and R2.fastq.gz)
+
+**Expected output:** Trimmed paired end reads (ex. ending in _1.trim.fastq.gz and _2.trim.fastq.gz)
 
 **1.** Download the raw reads
 ::
@@ -18,15 +20,17 @@ Pre-processing
 First, you will want to use `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_ to perform quality control checks on raw sequence data.
 We recommend setting up a conda environment:
 ::
- $  conda create -n fastqc_env python=3.8
- $  conda activate fastqc_env  
+ $  conda create -n preprocess_env python=3.8
+ $  conda activate preprocess_env  
 
  $  conda install fastqc
 
 Finally, create your ``output_directory`` and run fastqc on your reads:
 ::
  $  fastqc EBC_087_S160_L003_R1.fastq.gz EBC_087_S160_L003_R2.fastq.gz -o EBC_087_output_directory
-*this process should take ~x/sample*
+*this process should take ~5-7/sample*
+
+The output for this step includes .html files with QC information for each read, and .fastqc.zip files with basic sequencing statistics.
 
 For more FastQC information, visit their `website <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_.
 
@@ -39,7 +43,7 @@ Second, use BBTools to trim any sequencing adapters so that you are left with ju
 
 * `bbmap <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbmap-guide/>`_: removed human reads
 
-**#.** Save output to ``processed_reads`` directory
+**4.** Save output to ``processed_reads`` directory
 
 Profiling
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
