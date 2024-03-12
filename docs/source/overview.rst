@@ -7,7 +7,7 @@ The MiFoDB Workflow
 .. figure:: figures/MiFoDB_workflow.png
   :width: 800px
   :align: center
-*A visual representation of the MiFoDB workflow, including pre-processing and alignment-based profiling. For additional uses and examples, see `advanced use <https://mifodb.readthedocs.io/en/latest/advanced_use.html>`_*
+A visual representation of the MiFoDB workflow, including pre-processing and alignment-based profiling. For additional uses and examples, see `advanced use <https://mifodb.readthedocs.io/en/latest/advanced_use.html>`_
 
 FAQ
 ------------------------------------
