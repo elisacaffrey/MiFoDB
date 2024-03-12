@@ -31,7 +31,7 @@ Alignment based methods (i.e. InStrain) use a database to directly match sample 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 MiFoDB is designed as a tri-partite system to allow for maximum genome coverage while also allowing for domain-specific downstream analysis (for example, gene calling methods that differ btween prokaryotes and eukaryotes).
 
-MiFoDB design included use of dRep, which compared input genomes to include only representative genomes for each species based on completeness, contamination, and ANI >95%. Because of this, certain input genomes which might have undergone reclassification, renaming, or did not pass QC parameters might not appear in the final database. We recommend checking both the input and final genome list to identify whether a genome is included or whether a better representative genome was selected for the final database.
+MiFoDB design included use of dRep, which compared input genomes to include only representative genomes for each species based on completeness, contamination, and ANI >95%. Because of this, certain input genomes which might have undergone reclassification, renaming, or did not pass QC parameters might not appear in the final database. We recommend checking both the `input <https://docs.google.com/spreadsheets/d/1MRm0-iEqrncYY2IdW30ywDP2KTAJqAycLmWepbkV_H8/edit?usp=sharing>`_ and `final genome list <https://docs.google.com/spreadsheets/d/1PHRlb9YwKiwpVk8ChozBZbFYCA-VL3EXJTIPI-TI04A/edit#gid=815330257>`_ to identify whether a genome is included or whether a better representative genome was selected for the final database.
 
 *What can I do with MiFoDB results?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
