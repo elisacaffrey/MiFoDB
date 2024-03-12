@@ -17,7 +17,7 @@ Pre-processing
 **2. Perform FastQC**
 First, you will want to use `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_ to perform quality control checks on raw sequence data.
 We recommend setting up a conda environment:
-  $ conda create -n fastqc_env python=3.8
+ $  conda create -n fastqc_env python=3.8
 
 
 
