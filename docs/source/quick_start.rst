@@ -24,6 +24,7 @@ We recommend setting up a conda environment:
  $  conda install fastqc
 
 Finally, create your ``output_directory`` and run fastqc on your reads:
+::
  $  fastqc EBC_087_S160_L003_R1.fastq.gz EBC_087_S160_L003_R2.fastq.gz -o EBC_087_output_directory
 
 
