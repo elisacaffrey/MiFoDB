@@ -25,7 +25,7 @@ K-mer based methods (i.e. Clark, Kraken, Kaiju) use short exact matching substri
 
 **3. Alignment based** 
 
-Alignment based methods (i.e. InStrain) use a database to directly match sample reads to a genome reference database, while taking SNPs into account. While this results in high-accuracy and low false-positive rates, this method is more computationally intensive than marker based and k-mer based methods. However, reults from aligmnet based profiling can be easily used for functional analysis, strain tracking, and gene profiling. In addition, reporting of unmapped and low quality reads give a clear picture of how much of the sample is accurately profiled, and allows for the identification of novel genomes. For more information about inStrain, check out the Important concepts on the `inStrain page <https://instrain.readthedocs.io/en/latest/important_concepts.html>`_.
+Alignment based methods (i.e. InStrain) use a database to directly match sample reads to a genome reference database, while taking SNPs into account. While this results in high-accuracy and low false-positive rates, this method is more computationally intensive than marker based and k-mer based methods. However, reults from aligmnet based profiling can be easily used for functional analysis, strain tracking, and gene profiling. In addition, reporting of unmapped and low quality reads give a clear picture of how much of the sample is accurately profiled, and allows for the identification of novel genomes. For more information about inStrain, check out the inStrain `Important Concepts <https://instrain.readthedocs.io/en/latest/important_concepts.html>`_ page.
 
 *Which microbes are included in MiFoDB?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
