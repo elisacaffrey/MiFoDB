@@ -39,7 +39,8 @@ There are three main methods currently used for metagenome profiling, each with 
   Advantages,Disadvantages
   Fast, Poor identification of genomes without markers
   High accuracy for specific markers, High-false positive rate
-  No markers for novel microbes, Reports scaled mapped abundance
+  ,No markers for novel microbes
+  ,Reports scaled mapped abundance
 
 *What an I do with MiFoDB results?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
