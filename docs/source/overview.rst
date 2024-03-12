@@ -46,6 +46,12 @@ K-mer based methods (i.e. Clark, Kraken, Kaiju) use short exact matching substri
 
 Alignment based methods (i.e. InStrain) use a database to directly match sample reads to a genome reference database, while taking SNPs into account. While this results in high-accuracy and low false-positive rates, this method is more computationally intensive than marker based and k-mer based methods. However, reults from aligmnet based profiling can be easily used for functional analysis, strain tracking, and gene profiling. In addition, reporting of unmapped and low quality reads give a clear picture of how much of the sample is accurately profiled, and allows for the identification of novel genomes. For more information about inStrain, check out the Important concepts on the `inStrain page <https://instrain.readthedocs.io/en/latest/important_concepts.html>`_.
 
+*Which microbes are included in MiFoDB?*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+MiFoDB is designed as a tri-partite system to allow for maximum genome coverage while also allowing for domain-specific downstream analysis (for example, gene calling methods that differ btween prokaryotes and eukaryotes).
+
+MiFoDB design included use of dRep, which compared input genomes to include only representative genomes for each species based on completeness, contamination, and ANI >95%. Because of this, certain input genomes which might have undergone reclassification, renaming, or did not pass QC parameters might not appear in the final database. We recommend checking both the input and final genome list to identify whether a genome is included or whether a better representative genome was selected for the final database.
+
 *What can I do with MiFoDB results?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Downstream uses for MiFoDB results include:
@@ -54,7 +60,7 @@ Downstream uses for MiFoDB results include:
 
 * **Gene-based annotation:** Results can be easily used for functional analyses, including gene annotations based on `KEGG Orthologies <https://www.genome.jp/tools/kofamkoala/>`_, `Carbohydrate-Active enZYmes (CAZymes) <http://www.cazy.org/>`_, `Pfam <http://pfam.xfam.org/>`_, and `antibiotic resistant genes <https://card.mcmaster.ca/download>`_. 
 
-* Why do I not have <100% samples mapped?*
+*Why do I not have <100% samples mapped?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 MiFoDB allows for the calculation of mapped reads compared to the total trimmed reads, which also means that the percent of unmapped reads is reported. What are the unmapped reads? Because we use a reference database, unmapped reads might include genomes not in the database, poor quality genomes, or poorly assembled genomes. 
 
@@ -63,8 +69,8 @@ Considering the typically lower absolute mapping success of complex soil microbi
 **How can the percent of mapped genomes increase?**
 There are a few methods to help increase the percentage of mapped genomes:
 
-**#. Add more genomes to MiFoDB**:
+**#. Add more genomes to MiFoDB**: Fermented food metagenomics has yet to account for the diversity of microbes in ferments. One simple way is to use simple profiling methods to identify potential genomes of interest, and then add their reference genomes to the core MiFoDB database. Instructions on how to do that is included here. 
 
-**#. Deeper sequencing for discovery of novel genomes**:
+**#. Deeper sequencing for discovery of novel genomes**: While we incorporate known genomes into our 
 
 
