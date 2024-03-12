@@ -19,6 +19,9 @@ First, you will want to use `FastQC <https://www.bioinformatics.babraham.ac.uk/p
 We recommend setting up a conda environment:
 ::
  $  conda create -n fastqc_env python=3.8
+ $  conda activate fastqc_env  
+
+ $  conda install fastqc
 
 
 
