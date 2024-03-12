@@ -9,25 +9,6 @@ The MiFoDB Workflow
   :align: center
 *The above figure shows a visual representation of the MiFoDB workflow, including pre-processing, assembly, binning, and alignment-based profiling.*
 
-
-Glossary & FAQ
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Glossary of terms used in MiFoDB
-------------------------------------
-
-.. note::
-  This glossary is meant to give a conceptual overview of the terms used in MiFoDB. For a more detailed overview of these concepts, see the `InStrain Glossary <https://instrain.readthedocs.io/en/latest/overview.html#glossary-faq>`_.
-
-.. glossary::
-ANI
-  Average nucleotide identity
-
-scaffold-to-bin file
-  A .txt file with two columns where the first column is the scaffold name and the second column is the name of the genome the scaffold belongs to.
-  Can be created using the script `parse_stb.py <https://github.com/MrOlm/drep/blob/master/helper_scripts/parse_stb.py>`_ that comes with the program
-  ``dRep``  See :doc:`example_output` for more info
-
 FAQ
 ------------------------------------
 *Why use alignment-based profiling?*
@@ -66,11 +47,11 @@ MiFoDB allows for the calculation of mapped reads compared to the total trimmed 
 
 Considering the typically lower absolute mapping success of complex soil microbiome, and high abundance of well studied infant gut microbiome samples, fermented food sample mapping reflects an expected middle ground in diversity, being less diverse than the soil, but underexplored compared to the gut microbiome. 
 
-**How can the percent of mapped genomes increase?**
+**How can I increase my mapped genome abundance?**
 There are a few methods to help increase the percentage of mapped genomes:
 
-**#. Add more genomes to MiFoDB**: Fermented food metagenomics has yet to account for the diversity of microbes in ferments. One simple way is to use simple profiling methods to identify potential genomes of interest, and then add their reference genomes to the core MiFoDB database. Instructions on how to do that is included here. 
+**1. Add more genomes to MiFoDB**: Fermented food metagenomics has yet to account for the diversity of microbes in ferments. One simple way is to use simple profiling methods to identify potential genomes of interest, and then add their reference genomes to the core MiFoDB database. Instructions on how to do that is `included here <https://mifodb.readthedocs.io/en/latest/advanced_use.html#identifying-and-adding-prokaryote-genomes>`_. 
 
-**#. Deeper sequencing for discovery of novel genomes**: While we incorporate a majority of reference genomes into our database, a number of newly assembled and binned MAGs were also identified. There are likely a number of novel microbial genomes in fermented foods. However, due to lower sequencing depth, might meet coverage requirements for assembly. Performing deeper sequencing (>5Gb/sample), would allow for higher coverage and breadth of understudied genomes, allowing for further novel MAG identification.
+**2. Deeper sequencing for discovery of novel genomes**: While we incorporate a majority of reference genomes into our database, a number of newly assembled and binned MAGs were also identified. There are likely a number of novel microbial genomes in fermented foods. However, due to lower sequencing depth, might meet coverage requirements for assembly. Performing deeper sequencing (>5Gb/sample), would allow for higher coverage and breadth of understudied genomes, allowing for further novel MAG identification.
 
 
