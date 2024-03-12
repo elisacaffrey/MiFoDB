@@ -54,6 +54,17 @@ Downstream uses for MiFoDB results include:
 
 * **Gene-based annotation:** Results can be easily used for functional analyses, including gene annotations based on `KEGG Orthologies <https://www.genome.jp/tools/kofamkoala/>`_, `Carbohydrate-Active enZYmes (CAZymes) <http://www.cazy.org/>`_, `Pfam <http://pfam.xfam.org/>`_, and `antibiotic resistant genes <https://card.mcmaster.ca/download>`_. 
 
-
- *Why do I not have <100% samples mapped?*
+* Why do I not have <100% samples mapped?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+MiFoDB allows for the calculation of mapped reads compared to the total trimmed reads, which also means that the percent of unmapped reads is reported. What are the unmapped reads? Because we use a reference database, unmapped reads might include genomes not in the database, poor quality genomes, or poorly assembled genomes. 
+
+Considering the typically lower absolute mapping success of complex soil microbiome, and high abundance of well studied infant gut microbiome samples, fermented food sample mapping reflects an expected middle ground in diversity, being less diverse than the soil, but underexplored compared to the gut microbiome. 
+
+**How can the percent of mapped genomes increase?**
+There are a few methods to help increase the percentage of mapped genomes:
+
+**#. Add more genomes to MiFoDB**:
+
+**#. Deeper sequencing for discovery of novel genomes**:
+
+
