@@ -17,7 +17,8 @@ Pre-processing
  $  wget EBC_087_S160_L003_R2.fastq.gz
 
 **2. Perform FastQC**
-First, you will want to use `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_ to perform quality control checks on raw sequence data.
+
+Use `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_ to perform quality control checks on raw sequence data.
 We recommend setting up a conda environment:
 ::
  $  conda create -n preprocess_env python=3.8
@@ -35,7 +36,8 @@ The output for this step includes .html files with QC information for each read,
 For more FastQC information, visit their `website <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_.
 
 **3. Perform BBTools**
-Second, use BBTools to trim any sequencing adapters so that you are left with just reads from your original sample, and toemove any potential contaminating human genomes (this is less of a problem with fermented foods, but a huge deal when collecting human stool samples packed with the donors DNA) by using:
+
+Use BBTools to trim any sequencing adapters so that you are left with just reads from your original sample, and toemove any potential contaminating human genomes (this is less of a problem with fermented foods, but a huge deal when collecting human stool samples packed with the donors DNA) by using:
 
 * `bbduk <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbduk-guide/>`_: for the trimming and filtering of adapters and contaminants in your reads
 
