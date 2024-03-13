@@ -23,4 +23,4 @@ To calculate relative abundance:
 
 1. Join the IS_genome_info.csv file to sample read info and sample mapping information.
 
- ``percent_abundance = ((filtered_read_pair_count)/read_pairs)*100))``
+``percent_abundance = ((filtered_read_pair_count)/read_pairs)*100))``
