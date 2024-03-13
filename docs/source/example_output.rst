@@ -33,4 +33,6 @@ For an additional QC with MiFoDB_sub, remove any genome with abundance <2%.
 
 **3.** Results are now ready for plotting and downstream analysis. For example:
 
-
+.. figure:: figures/Pikliz.jpg
+  :width: 800px
+  :align: center
