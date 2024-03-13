@@ -7,7 +7,7 @@ While the latest version of MiFoDB (`MiFoDB_beta_v2 <https://docs.google.com/spr
 
 There are a few recommended ways of doing this, depending on genome type. 
 
-1. Identifying and adding prokaryote genomes
+1. Identifying genomes of interest to add to MiFoDB
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Identification of unmapped prokaryote genomes missing from the database can easily be done using `sylph <https://github.com/bluenote-1577/sylph>`_, an ultrafast metagenomic profiler for metagenomic shotgun samples based on a pre-sketched GTDB r214 database. GTDB (`Genome Taxonomic Database <https://gtdb.ecogenomic.org/>`_) is a database which uses RefSeq and GenBank genomes to standardize microbial taxonomy, while incorporating independent quality control checks. For more information about GTDB, `see their website <https://gtdb.ecogenomic.org/about>`_. 
 
@@ -28,13 +28,91 @@ or
 
 For questions about sylph, contact the sylph authors. 
 
+**2. Prepare the sylph sketch of your genome**
+::
+ $  sylph sketch -1 EBC_087_1.trim.fastq.gz -2 EBC_087_2.trim.fastq.gz
 
+**3. Finally, use sylph to profile**
+::
+ $  sylph profile gtdb_database_c200.syldb *.sylsp -t 10 > EBC_087_sylphprofile.tsv
+
+You can now identify any microbes that are not in MiFoDB that you might be interested in adding to a custom database.
+
+1. Adding prokaryote genomes to your custom database
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Once you have identified your genomes of interest:
+
+**1. Download reference genomes from NCBI**
+
+**2. Run dRep on all genomes**: In order to prevent the inclusion of genomes with >95% ANI or with low completeness and high contamination which might confound your results, you will want to make sure you only include one representative genome for each species. 
+
+Download all representative prokaryote genomes used in the final MiFoDB here. Then download any genomes of interest and add them to the directory. Finally, run `dRep <https://drep.readthedocs.io/en/latest/installation.html>`_ to identify the representative genomes. input_prokList_v1.txt will include the complete file paths of all the genomes included in this dRep run (current database and newly added genomes).
+::
+ $  dRep dereplicate -p 12 -con 10 -comp 50 --S_algorithm fastANI dRep_output_v1 -g input_prokList_v1.txt -d
+
+**3. Make a .fasta and .stb file**: Now, make a new directory with all the winning genomes (in Wdb.csv) and concatenate them into a .fasta file:
+::
+ $  cat all_winning_prok_genomes/* > MiFoDB_custom_prok.fasta
+
+Make a .stb file using `parse_stb.py <https://instrain.readthedocs.io/en/master/user_manual.html>`_:
+::
+ $  parse_stb.py --reverse -f all_winning_prok_genomes/* -o MiFoDB_custom_prok.stb
+
+**3. Make a gene file**: Finally, use `prodigal <https://github.com/hyattpd/Prodigal/wiki/installation>`_ to make your new gene files:
+::
+ $  prodigal -i MiFoDB_custom_prok.fasta -d genes.fna -a genes.faa
+
+These files can now be used to profile your samples.
 
 2. Adding eukaryote genomes
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Adding eukaryote genomes involves one extra step.
+
+**1. Download all genomes**: Download current MiFoDB eukaryote genomes and genomes of interest from NCBI, and add them to the same directory (ex. input_custom_euk_genomes) 
+
+**2. Use EukCC to calculate completeness and contamination**: dRep requires completeness and contamination scores which it cannot calculate for eukaryotes. We will use `Eukcc <https://eukcc.readthedocs.io/en/latest/index.html>`_ (Saary et al. 2020) to calculate eukaryote completeness and contamination. We recommend using the docker container.
+::
+ $  docker run -it \
+  -v MiFoDB_beta_v2_euk_renamed/:/data/ \
+  -v eukcc2_db_ver_1.1:/db/ \
+  -v MiFoDB_beta_v1_eukcc_v1:/MiFoDB_beta_v1_eukcc_v1 \
+  quay.io/microbiome-informatics/eukcc:latest \
+  folder --out MiFoDB_beta_v1_eukcc_v1 --threads 8 \
+  /data/ --db /db/
+
+With the results, make a new .csv file with the completeness and contamination to input into dRep. The input file should look like this, with the same headings:
+
+.. csv-table:: genome_info.tsv
+
+  genome,completeness,contamination
+  C-R02.bin.8.fa,98.76,0
+  C-R03.bin.1.fa,96.27,0
+  C-R03.bin.3.fa,95.24,0.21
+  C-R04.bin.2.fa,81.99,0
+
+**3. Now, run dRep**: where input_eukList_v1.txt contains the complete path to the eukaryote genomes
+::
+ $  dRep dereplicate -p 12 -con 100 -comp 50 --S_algorithm fastANI dRep_output_euk_v1 -g input_eukList_v1.txt -d --genomeInfo genome_info.csv --contamination_weight 0
+
+``Note that the threshold for completeness and contamination differ from prokaryotes. This was done after noticing that some high quality reference genomes had high contamination rate, potentially due some diploid eukaryote genomes. Contamination weight is thus set to 0 minimum.``
+
+**3. Finally, proceed as with prokaryotes, making a .fasta and .stb file**: prodigal is not suited for eukaryote gene calling, so do not make a gene file. 
+
 
 3. Adding substrate genomes
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Adding substrate genomes involves fewer steps. 
+
+**1. Download substrate genomes of interest** 
+
+**2. Make a .fasta and .stb file**: Now, make a new directory with all the winning genomes (in Wdb.csv) and concatenate them into a .fasta file:
+::
+ $  cat all_winning_prok_genomes/* > MiFoDB_custom_prok.fasta
+
+And finally make a .stb file using `parse_stb.py <https://instrain.readthedocs.io/en/master/user_manual.html>`_:
+::
+ $  parse_stb.py --reverse -f all_winning_prok_genomes/* -o MiFoDB_custom_prok.stb
 
 
 Functional Analysis
@@ -48,8 +126,4 @@ Gene Profiling
 
 Adding MAGs to database
 ------------------------------
-MiFoDB is based on inStrain profiling, so output will be the same as described in  `inStrain profile <https://instrain.readthedocs.io/en/latest/example_output.html#instrain-profile>`_. For every sample, there will be a number of inStrain output files (`detailed here <https://instrain.readthedocs.io/en/latest/example_output.html#instrain-profile>`_), but the most important output files is ``genome_info.tsv``. For example:
-
-
-
-Which can be used to calculate the total abundance. Examples on how to do that is included in `example output <https://mifodb.readthedocs.io/en/latest/example_output.html>`_.
+If you are interested in assemling metagenomes from your samples, you can calculate the same 
