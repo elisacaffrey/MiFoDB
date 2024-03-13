@@ -1,6 +1,7 @@
 Quick Start
 ===================
-This workflow will walk you through the steps needed to go from getting your data back from a sequencing facility to having a profiled list of genomes with the mapped relative abundances.
+This workflow will walk you through the steps needed to go from getting your data back from a sequencing facility to having a profiled list of genomes.
+Once the profiles are preprocessed, you will be able to choose whether to run them against the prokaryote database, eukaryote database, substrate database, or all three and then combine the results.
 As an example, we can use reads from a sample of pikliz, a Haitian ferment with cabbage, carrots, bell peppers and Scotch bonnet peppers, produced in Montana, USA.
 
 
