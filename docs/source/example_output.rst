@@ -36,3 +36,9 @@ For an additional QC with MiFoDB_sub, remove any genome with abundance <2%.
 .. figure:: figures/pikliz_db.jpg
   :width: 800px
   :align: center
+
+Or take a closer look at the mapped species:
+
+.. figure:: figures/pikliz_species.jpg
+  :width: 600px
+  :align: center
