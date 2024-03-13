@@ -31,5 +31,6 @@ You can then combine all results from MiFoDB_prok, MiFoDB_euk, and MiFoDB_sub.
 
 For an additional QC with MiFoDB_sub, remove any genome with abundance <2%.
 
-**3.** Results are now ready for plotting and downstream analysis
+**3.** Results are now ready for plotting and downstream analysis. For example:
+
 
