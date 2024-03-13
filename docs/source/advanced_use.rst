@@ -99,6 +99,7 @@ With the results, make a new .csv file with the completeness and contamination t
 
 **3. Finally, proceed as with prokaryotes, making a .fasta and .stb file**: prodigal is not suited for eukaryote gene calling, so do not make a gene file. 
 
+``When running inStrain profile, if no reads in the sample map to eukaryotic genomes in the database, it will report that inStrain has failed. That could be expected depending on the sample, so the error can be ignored.``
 
 3. Adding substrate genomes
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -114,16 +115,50 @@ And finally make a .stb file using `parse_stb.py <https://instrain.readthedocs.i
 ::
  $  parse_stb.py --reverse -f all_winning_prok_genomes/* -o MiFoDB_custom_prok.stb
 
-
-Functional Analysis
-------------------------------
-
-
-
-Gene Profiling
-------------------------------
-
-
 Adding MAGs to database
 ------------------------------
-If you are interested in assemling metagenomes from your samples, you can calculate the same 
+You can always first assemble metagenomes from your samples and then them to your database.
+
+*Pre-processing*
+
+For preprocessing of the raw reads, follow the same instruction as in `quick start <https://mifodb.readthedocs.io/en/latest/quick_start.html#pre-processing>`_.
+
+*Assembly*
+To assemble your MAGs, there are a number of programs that could be used, including `MegaHIT <https://github.com/voutcn/megahit>`_ (Li et al. 2015) or metaSPAdes <https://github.com/ablab/spades>`_ (Nurk et al. 2017).
+
+To use MegaHIT, follow the `basic usage instructions <https://github.com/voutcn/megahit?tab=readme-ov-file#basic-usage>`_.
+The output will include contigs ending in .contig.fa.gz
+
+*Binning*
+Binning was performed with `MetaBAT2 <https://bitbucket.org/berkeleylab/metabat/src>`_ (Kang et al. 2019).
+
+MetaBAT2 output will include number of bins, typically starting with the sample name and ending in .fa.gz.
+
+*Classify*
+To get a sense of what the new bins might be, first use EukRep <https://github.com/patrickwest/EukRep>`_ (West et al. 2018) to calssify whether these bins are likely prokaryotic or eukaryotic. If the reported eukaryote score is > 50% eukaryotic and the genome length is >6Mbp, the bins can be assumed to be eukaryotic. If they don't meet the criteria, they can be assumed to be prokaryotic. 
+
+To assign taxonomy to any prokaryotic bins, you can run  `gtdbtk classify <https://ecogenomics.github.io/GTDBTk/commands/classify.html>`_ . To assign taxonomy to any eukaryotic bins, try using tRep `<https://github.com/MrOlm/tRep>`_ instead to get a potential ID.
+
+Or, you can skip classification at this step and incorporate the bins at the respecive "Adding Genomes to Your Custom Database" step above and proceed with downstream dRep analysis. 
+
+Functional Analysis and Gene Profiling
+------------------------------
+inStrain profile results are designed to easily perform functional analysis. To look for gene annotations using KEGG Orthologies (KOs), Carbohydrate-Active enZYmes (CAZymes), or Antibiotic Resistance Genes, check out `Gene Annotations <https://github.com/MrOlm/inStrain/blob/master/docs/user_manual.rst#gene-annotation>`_.
+
+Strain Tracking
+------------------------------
+In order to perform strain level comparisons and identify shared strains (99.999% popANI), we can use the IS results from instrain profile and the .stb file. More information on inStrain compare  `here <https://instrain.readthedocs.io/en/master/tutorial.html#compare>`_. 
+
+The instraincompare.csv file includes the complete path to the IS directory for each sample:
+
+.. csv-table:: instraincompare.tsv
+
+   sample,IS_loc,group
+   EBC_009,/complete/path/to/sample/EBC_009.IS,1
+   EBC_010,/complete/path/to/sample/EBC_010.IS,1
+   EBC_011,/complete/path/to/sample/EBC_011.IS,1
+   EBC_012,/complete/path/to/sample/EBC_012.IS,1
+
+::
+ $  inStrain compare -i instraincompare.csv -o instraincompared_IS_results/ -p 6 -s MiFoDB_beta_v2_prok.stb
+
