@@ -159,6 +159,7 @@ The instraincompare.csv file includes the complete path to the IS directory for 
    EBC_011,/complete/path/to/sample/EBC_011.IS,1
    EBC_012,/complete/path/to/sample/EBC_012.IS,1
 
+Then run:
 ::
  $  inStrain compare -i instraincompare.csv -o instraincompared_IS_results/ -p 6 -s MiFoDB_beta_v2_prok.stb
 
