@@ -26,4 +26,10 @@ To do this, you will need:
 Where filtered_read_pair_count is originally in the .IS_genome_info.csv, and read_pairs is from bowtie2.log
 
 **2.** For QC, filter any genomes with breadth < 0.5. Those can be considered "low confidence" mapping, while any genomes with breadth > 0.5 are considered high-confidence mapping results.
-**2.** 
+
+You can then combine all results from MiFoDB_prok, MiFoDB_euk, and MiFoDB_sub.
+
+For an additional QC with MiFoDB_sub, remove any genome with abundance <2%.
+
+**3.** Results are now ready for plotting and downstream analysis
+
