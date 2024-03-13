@@ -86,6 +86,7 @@ Finally, you will need to convert the SAM file to a BAM file and index the sorte
  $  samtools view -Sb EBC_087_aligned_reads.sam > EBC_087_aligned_reads.bam
  $  samtools sort EBC_087_aligned_reads.bam -o EBC_087_sort_aligned_reads.bam
  $  samtools index EBC_087_sort_aligned_reads.bam
+ $  bowtie2 -p 10 -x genome -U sample.fastq -S sample.sam) 2>file.log
 
 **3. Run inStrain**
 
