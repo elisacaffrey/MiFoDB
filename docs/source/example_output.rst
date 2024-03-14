@@ -18,7 +18,7 @@ Now that you have completed your alignment based profiling using MiFoDB, we can 
 ::
 
     $ 18233183 reads; of these:
-              **18233183** (100.00%) were paired; of these:
+          **18233183** (100.00%) were paired; of these:
                  16282298 (89.30%) aligned concordantly 0 times
                  1046019 (5.74%) aligned concordantly exactly 1 time
                  904866 (4.96%) aligned concordantly >1 times
