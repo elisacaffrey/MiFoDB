@@ -16,18 +16,17 @@ Now that you have completed your alignment based profiling using MiFoDB, we can 
 **2.** Sample read info, found in bowtie2.log file created after making the .bam file. For each bowtie2.log, save the sample name and paired reads (bolded below) (this will be the read_pairs after adapter trimming and human genome remover)
 
 ::
-
-    $ 18233183 reads; of these:
-          **18233183** (100.00%) were paired; of these:
-                 16282298 (89.30%) aligned concordantly 0 times
-                 1046019 (5.74%) aligned concordantly exactly 1 time
-                 904866 (4.96%) aligned concordantly >1 times
-                 ----
-                 16282298 pairs aligned concordantly 0 times; of these:
-                  520393 (3.20%) aligned discordantly 1 time
-                  ----
-                  15761905 pairs aligned 0 times concordantly or discordantly; of these:
-
+    $ head bowtie2.EBC_087.log 
+      18233183 reads; of these:
+        18233183 (100.00%) were paired; of these:
+         16282298 (89.30%) aligned concordantly 0 times
+         1046019 (5.74%) aligned concordantly exactly 1 time
+         904866 (4.96%) aligned concordantly >1 times
+         ----
+         16282298 pairs aligned concordantly 0 times; of these:
+          520393 (3.20%) aligned discordantly 1 time
+         ----
+         15761905 pairs aligned 0 times concordantly or discordantly; of these:
 
 **3.** Database mapping file `MiFoDB_beta_v2_allRef <https://zenodo.org/records/10811087>`_
 
