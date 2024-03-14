@@ -15,7 +15,28 @@ Now that you have completed your alignment based profiling using MiFoDB, we can 
 
 **2.** Sample read info, found in bowtie2.log file created after making the .bam file. For each bowtie2.log, save the sample name and paired reads (bolded below) (this will be the read_pairs after adapter trimming and human genome remover)
 
-.. code-block::
+::
+
+    $ inStrain -h
+
+                    ...::: inStrain v1.3.2 :::...
+
+      Matt Olm and Alex Crits-Christoph. MIT License. Banfield Lab, UC Berkeley. 2019
+
+      Choose one of the operations below for more detailed help. See https://instrain.readthedocs.io for documentation.
+      Example: inStrain profile -h
+
+      Workflows:
+        profile         -> Create an inStrain profile (microdiversity analysis) from a mapping.
+        compare         -> Compare multiple inStrain profiles (popANI, coverage_overlap, etc.)
+
+      Single operations:
+        profile_genes   -> Calculate gene-level metrics on an inStrain profile [DEPRECATED; USE profile INSTEAD]
+        genome_wide     -> Calculate genome-level metrics on an inStrain profile
+        quick_profile   -> Quickly calculate coverage and breadth of a mapping using coverM
+        filter_reads    -> Commands related to filtering reads from .bam files
+        plot            -> Make figures from the results of "profile" or "compare"
+        other           -> Other miscellaneous operations
 
 18233183 reads; of these:
   **18233183** (100.00%) were paired; of these:
