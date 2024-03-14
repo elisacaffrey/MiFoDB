@@ -16,6 +16,7 @@ Now that you have completed your alignment based profiling using MiFoDB, we can 
 **2.** Sample read info, found in bowtie2.log file created after making the .bam file. For each bowtie2.log, save the sample name and paired reads (bolded below) (this will be the read_pairs after adapter trimming and human genome remover)
 
 .. code-block::
+
 18233183 reads; of these:
   **18233183** (100.00%) were paired; of these:
     16282298 (89.30%) aligned concordantly 0 times
