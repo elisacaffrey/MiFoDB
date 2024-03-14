@@ -41,6 +41,7 @@ Where filtered_read_pair_count is originally in the .IS_genome_info.csv, and rea
 It should look something like this:
 
 .. csv-table:: Example: EBC_087_profile.csv
+
   genome,sample,length,coverage,abundance,breadth,filtered_read_pair_count,read_pairs
   EBC_086.5,EBC_087,2377866,2.03925873030692,0.215016678311685,0.150023592582593,38578,17941864
   GCF_001039045.1_ASM103904v1_genomic,EBC_087,2899876,1.27013224013716,0.147297961906299,0.019880160393065,26428,17941864
