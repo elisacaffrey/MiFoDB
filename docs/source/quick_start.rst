@@ -38,13 +38,25 @@ For more FastQC information, visit their `website <https://www.bioinformatics.ba
 
 **3. Perform BBTools**
 
-Use BBTools to trim any sequencing adapters so that you are left with just reads from your original sample, and toemove any potential contaminating human genomes (this is less of a problem with fermented foods, but a huge deal when collecting human stool samples packed with the donors DNA) by using:
+Use BBTools to trim any sequencing adapters so that you are left with just reads from your original sample and remove any potential contaminating human genomes (this is less of a problem with fermented foods, but a huge deal when collecting human stool samples packed with the donors DNA) by using:
 
 * `bbduk <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbduk-guide/>`_: for the trimming and filtering of adapters and contaminants in your reads
 
 * `repair <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/repair-guide/>`_: when starting with pair-end reads, to fix paired read files that became disordered
 
 * `bbmap <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbmap-guide/>`_: removed human reads
+
+First, install BBtools following instructions on their `installation guide <https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/installation-guide/>`_. Make sure to make bbmap executable by adding the path to your ~/.bashrc.
+
+Next, run:
+::
+ $  bbduk.sh in1=EBC_087_S160_L003_R1.fastq.gz in2=EBC_087_S160_L003_R2.fastq.gz out1=EBC_087_bbduk_1.fastq.gz out2=EBC_087_bbduk_2.fastq.gz ref=$ADAPTERS ktrim=r k=23 mink=11 hdist=1 tpe tbo &> EBC_087.bbduk.log
+
+ $  repair.sh in=EBC_087_bbduk_1.fastq.gz in2=EBC_087_bbduk_2.fastq.gz out=EBC_087_repair_1.fastq.gz out2=EBC_087_repair_2.fastq.gz
+
+Finally, prepare the human reference genome, and then run bbmap
+ $  bbmap.sh ref=hg38.fa
+ $  bbmap.sh in=EBC_087_repair_1.fastq.gz in2=EBC_087_repair_2.fastq.gz out=EBC_087_trim_1.fastq.gz out2=EBC_087_trim_2.fastq.gz ref=hg38.fa nodisk
 
 **4.** Save output to ``processed_reads`` directory
 
@@ -77,7 +89,7 @@ For each database (prokaryote, eukaryote, or substrate), download the .fasta and
 
 **3. Make your .bam file**
 
-You only have to do this once for each database version. Make sure to always use the .bam file mad from the same version of the database .fasta file.
+You only have to do this once for each database version. Make sure to always use the .bam file made from the same version of the database .fasta file.
 ::
  $  bowtie2-build MiFoDB_beta_v2_prok.fasta MiFoDB_prok_v2_index
  $  bowtie2 -x MiFoDB_prok_v2_index -1 EBC_087_S160_L003_R1.fastq.gz -2 EBC_087_S160_L003_R2.fastq.gz -S EBC_087_aligned_reads.sam
@@ -87,7 +99,7 @@ Finally, you will need to convert the SAM file to a BAM file and index the sorte
  $  samtools view -Sb EBC_087_aligned_reads.sam > EBC_087_aligned_reads.bam
  $  samtools sort EBC_087_aligned_reads.bam -o EBC_087_sort_aligned_reads.bam
  $  samtools index EBC_087_sort_aligned_reads.bam
- $  bowtie2 -p 10 -x genome -U sample.fastq -S sample.sam) 2>file.log
+ $  bowtie2 -p 10 -x MiFoDB_prok_v2_index -1 EBC_087_S160_L003_R1.fastq.gz -2 EBC_087_S160_L003_R2.fastq.gz -S EBC_087_aligned_reads.sam)  2>bowtie2.EBC_087.log
 
 **3. Run inStrain**
 
