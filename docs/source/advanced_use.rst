@@ -127,7 +127,7 @@ For preprocessing of the raw reads, follow the same instruction as in `quick sta
 
 *Assembly*
 
-To assemble your MAGs, there are a number of programs that could be used, including `MegaHIT <https://github.com/voutcn/megahit>`_ (Li et al. 2015) or metaSPAdes <https://github.com/ablab/spades>`_ (Nurk et al. 2017).
+To assemble your MAGs, there are a number of programs that could be used, including `MegaHIT <https://github.com/voutcn/megahit>`_ (Li et al. 2015) or `metaSPAdes <https://github.com/ablab/spades>`_ (Nurk et al. 2017).
 
 To use MegaHIT, follow the `basic usage instructions <https://github.com/voutcn/megahit?tab=readme-ov-file#basic-usage>`_.
 The output will include contigs ending in .contig.fa.gz
