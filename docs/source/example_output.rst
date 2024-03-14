@@ -14,7 +14,8 @@ Now that you have completed your alignment based profiling using MiFoDB, we can 
  EBC_086.5.fna,1.596317454,0.049848898,0.006035971,2377866,79,52,0,19.94120243,0.012974942,0.028909535,0.755746415,0.002048653,0.979081506,0.984682077,,FALSE,1337,56.69334331,0.637899652,0.9941014,1438,1053,1040,825,17829,19210,0.969968582,48221,1865
 
 **2.** Sample read info, found in bowtie2.log file created after making the .bam file. For each bowtie2.log, save the sample name and paired reads (bolded below) (this will be the read_pairs after adapter trimming and human genome remover)
-::
+
+.. code-block::
 18233183 reads; of these:
   **18233183** (100.00%) were paired; of these:
     16282298 (89.30%) aligned concordantly 0 times
