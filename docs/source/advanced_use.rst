@@ -126,20 +126,22 @@ You can always first assemble metagenomes from your samples and then them to you
 For preprocessing of the raw reads, follow the same instruction as in `quick start <https://mifodb.readthedocs.io/en/latest/quick_start.html#pre-processing>`_.
 
 *Assembly*
+
 To assemble your MAGs, there are a number of programs that could be used, including `MegaHIT <https://github.com/voutcn/megahit>`_ (Li et al. 2015) or metaSPAdes <https://github.com/ablab/spades>`_ (Nurk et al. 2017).
 
 To use MegaHIT, follow the `basic usage instructions <https://github.com/voutcn/megahit?tab=readme-ov-file#basic-usage>`_.
 The output will include contigs ending in .contig.fa.gz
 
 *Binning*
+
 Binning was performed with `MetaBAT2 <https://bitbucket.org/berkeleylab/metabat/src>`_ (Kang et al. 2019).
 
 MetaBAT2 output will include number of bins, typically starting with the sample name and ending in .fa.gz.
 
 *Classify*
-To get a sense of what the new bins might be, first use EukRep <https://github.com/patrickwest/EukRep>`_ (West et al. 2018) to calssify whether these bins are likely prokaryotic or eukaryotic. If the reported eukaryote score is > 50% eukaryotic and the genome length is >6Mbp, the bins can be assumed to be eukaryotic. If they don't meet the criteria, they can be assumed to be prokaryotic. 
+To get a sense of what the new bins might be, first use `EukRep <https://github.com/patrickwest/EukRep>`_ (West et al. 2018) to calssify whether these bins are likely prokaryotic or eukaryotic. If the reported eukaryote score is > 50% eukaryotic and the genome length is >6Mbp, the bins can be assumed to be eukaryotic. If they don't meet the criteria, they can be assumed to be prokaryotic. 
 
-To assign taxonomy to any prokaryotic bins, you can run  `gtdbtk classify <https://ecogenomics.github.io/GTDBTk/commands/classify.html>`_ . To assign taxonomy to any eukaryotic bins, try using tRep `<https://github.com/MrOlm/tRep>`_ instead to get a potential ID.
+To assign taxonomy to any prokaryotic bins, you can run  `gtdbtk classify <https://ecogenomics.github.io/GTDBTk/commands/classify.html>`_ . To assign taxonomy to any eukaryotic bins, try using `tRep <https://github.com/MrOlm/tRep>`_ instead to get a potential ID.
 
 Or, you can skip classification at this step and incorporate the bins at the respecive "Adding Genomes to Your Custom Database" step above and proceed with downstream dRep analysis. 
 
