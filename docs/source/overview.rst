@@ -41,7 +41,7 @@ Downstream uses for MiFoDB results include:
 
 * **Gene-based annotation:** Results can be easily used for functional analyses, including gene annotations based on `KEGG Orthologies <https://www.genome.jp/tools/kofamkoala/>`_, `Carbohydrate-Active enZYmes (CAZymes) <http://www.cazy.org/>`_, `Pfam <http://pfam.xfam.org/>`_, and `antibiotic resistant genes <https://card.mcmaster.ca/download>`_. 
 
-*Why do I not have <100% samples mapped?*
+*Why don't I have 100% mapping?*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 MiFoDB allows for the calculation of mapped reads compared to the total trimmed reads, allowing for the reporting of both mapped and unmapped reads. 
 
