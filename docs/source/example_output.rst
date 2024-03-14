@@ -17,37 +17,16 @@ Now that you have completed your alignment based profiling using MiFoDB, we can 
 
 ::
 
-    $ inStrain -h
-
-                    ...::: inStrain v1.3.2 :::...
-
-      Matt Olm and Alex Crits-Christoph. MIT License. Banfield Lab, UC Berkeley. 2019
-
-      Choose one of the operations below for more detailed help. See https://instrain.readthedocs.io for documentation.
-      Example: inStrain profile -h
-
-      Workflows:
-        profile         -> Create an inStrain profile (microdiversity analysis) from a mapping.
-        compare         -> Compare multiple inStrain profiles (popANI, coverage_overlap, etc.)
-
-      Single operations:
-        profile_genes   -> Calculate gene-level metrics on an inStrain profile [DEPRECATED; USE profile INSTEAD]
-        genome_wide     -> Calculate genome-level metrics on an inStrain profile
-        quick_profile   -> Quickly calculate coverage and breadth of a mapping using coverM
-        filter_reads    -> Commands related to filtering reads from .bam files
-        plot            -> Make figures from the results of "profile" or "compare"
-        other           -> Other miscellaneous operations
-
-18233183 reads; of these:
-  **18233183** (100.00%) were paired; of these:
-    16282298 (89.30%) aligned concordantly 0 times
-    1046019 (5.74%) aligned concordantly exactly 1 time
-    904866 (4.96%) aligned concordantly >1 times
-    ----
-    16282298 pairs aligned concordantly 0 times; of these:
-      520393 (3.20%) aligned discordantly 1 time
-    ----
-    15761905 pairs aligned 0 times concordantly or discordantly; of these:
+    $ 18233183 reads; of these:
+              **18233183** (100.00%) were paired; of these:
+                 16282298 (89.30%) aligned concordantly 0 times
+                 1046019 (5.74%) aligned concordantly exactly 1 time
+                 904866 (4.96%) aligned concordantly >1 times
+                 ----
+                 16282298 pairs aligned concordantly 0 times; of these:
+                  520393 (3.20%) aligned discordantly 1 time
+                  ----
+                  15761905 pairs aligned 0 times concordantly or discordantly; of these:
 
 
 **3.** Database mapping file `MiFoDB_beta_v2_allRef <https://zenodo.org/records/10811087>`_
