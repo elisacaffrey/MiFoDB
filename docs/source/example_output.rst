@@ -3,7 +3,8 @@ Example Output
 
 Now that you have completed your alignment based profiling using MiFoDB, we can calculate the mapping abundance. 
 
-*Set up table:*
+Table setup
++++++++++++++++
 
 **1.** Your inStrain profile results
 
@@ -29,7 +30,8 @@ Now that you have completed your alignment based profiling using MiFoDB, we can 
 
 **3.** Database mapping file `MiFoDB_beta_v2_allRef <https://zenodo.org/records/10811087>`_
 
-*Calculate relative abundance:*
+Calculate relative abundance:
++++++++++++++++
 
 **1.** Join the IS_genome_info.csv file to sample read info and sample mapping information.
 
