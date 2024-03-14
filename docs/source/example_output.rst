@@ -6,7 +6,6 @@ Now that you have completed your alignment based profiling using MiFoDB, we can 
 *Set up table:*
 
 **1.** Your inStrain profile results
-
 .. csv-table:: Example: EBC_177.IS_genome_info.csv
 
    genome,coverage,breadth,nucl_diversity,length,true_scaffolds,detected_scaffolds,coverage_median,coverage_std,coverage_SEM,breadth_minCov,breadth_expected,nucl_diversity_rarefied,conANI_reference,popANI_reference,iRep,iRep_GC_corrected,linked_SNV_count,SNV_distance_mean,r2_mean,d_prime_mean,consensus_divergent_sites,population_divergent_sites,SNS_count,SNV_count,filtered_read_pair_count,reads_unfiltered_pairs,reads_mean_PID,reads_unfiltered_reads,divergent_site_count
