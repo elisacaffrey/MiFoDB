@@ -52,7 +52,7 @@ Because we use a reference database, unmapped reads might include genomes not in
 **How can I increase my mapped genome abundance?**
 There are a few methods to help increase the percentage of mapped genomes:
 
-**1. Add more genomes to MiFoDB**: Fermented food metagenomics has yet to account for the diversity of microbes in ferments. One simple way is to use simple profiling methods to identify potential genomes of interest, and then add their reference genomes to the core MiFoDB database. Instructions on how to do that is `included here <https://mifodb.readthedocs.io/en/latest/advanced_use.html#identifying-and-adding-prokaryote-genomes>`_. 
+**1. Add more genomes to MiFoDB**: Fermented food metagenomics has yet to account for the diversity of microbes in ferments. One simple way is to use simple profiling methods to identify potential genomes of interest, and then add their reference genomes to the core MiFoDB database. Instructions on how to do this can be `found here <https://mifodb.readthedocs.io/en/latest/advanced_use.html#identifying-and-adding-prokaryote-genomes>`_. 
 
 **2. Deeper sequencing for discovery of novel genomes**: While we incorporate a majority of reference genomes into our database, a number of newly assembled and binned MAGs were also identified. There are likely a number of novel microbial genomes in fermented foods. However, due to lower sequencing depth, might meet coverage requirements for assembly. Performing deeper sequencing (>5Gb/sample), would allow for higher coverage and breadth of understudied genomes, allowing for further novel MAG identification.
 
