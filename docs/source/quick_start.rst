@@ -54,7 +54,8 @@ Next, run:
 
  $  repair.sh in=EBC_087_bbduk_1.fastq.gz in2=EBC_087_bbduk_2.fastq.gz out=EBC_087_repair_1.fastq.gz out2=EBC_087_repair_2.fastq.gz
 
-Finally, prepare the human reference genome, and then run bbmap
+Finally, prepare the human reference genome, and then run bbmap:
+::
  $  bbmap.sh ref=hg38.fa
  $  bbmap.sh in=EBC_087_repair_1.fastq.gz in2=EBC_087_repair_2.fastq.gz out=EBC_087_trim_1.fastq.gz out2=EBC_087_trim_2.fastq.gz ref=hg38.fa nodisk
 
