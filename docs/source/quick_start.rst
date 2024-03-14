@@ -86,7 +86,7 @@ For more information on installation, visit `inStrain <https://instrain.readthed
 
 For each database (prokaryote, eukaryote, or substrate), download the .fasta and .stb file.
 
-``for prokaryote, make sure to also download the .genes file``
+*for prokaryote, make sure to also download the .genes file*
 
 **3. Make your .bam file**
 
