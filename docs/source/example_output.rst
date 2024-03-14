@@ -38,6 +38,7 @@ Now that you have completed your alignment based profiling using MiFoDB, we can 
 Where filtered_read_pair_count is originally in the .IS_genome_info.csv, and read_pairs is from bowtie2.log
 
 It should look something like this:
+
 .. csv-table:: Example: EBC_087_profile.csv
 
   genome,sample,length,coverage,abundance,breadth,filtered_read_pair_count,read_pairs
