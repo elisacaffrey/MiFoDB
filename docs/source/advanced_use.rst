@@ -45,7 +45,7 @@ You can now identify any microbes that are not in MiFoDB that you might be inter
 
 Once you have identified your genomes of interest:
 
-**1. Check that the genomes of interest are not included in the original input set.**: If the genomes is >95% ANI it won't have been used as a representative genomes. This is primarily a problem for eukaryotes, and less for prokaryotes. However, taxonomy might have been updated, so microbes of two different names might now be considered the same species. This step is not as important, but could save you a lot of time.
+**1. Check that the genomes of interest are not included in the original input set**: If the genomes is >95% ANI it won't have been used as a representative genomes. This is primarily a problem for eukaryotes, and less for prokaryotes. However, taxonomy might have been updated, so microbes of two different names might now be considered the same species. This step is not as important, but could save you a lot of time.
 
 **2. Download all the reference genomes already in MiFoDB_prok or MiFoDB_euk:** These are two .zip files available on https://zenodo.org/records/10870254, named MiFoDB_beta_v2_allprokgenomes.zip
 
