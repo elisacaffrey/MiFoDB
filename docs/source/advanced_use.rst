@@ -60,18 +60,22 @@ Once you have identified your genomes of interest:
 
 Run `dRep <https://drep.readthedocs.io/en/latest/installation.html>`_ to identify the representative genomes from your new input directory. input_prokList_v1.txt will include the complete file paths of all the genomes included in this dRep run (current database and newly added genomes).
 ::
+
  $  dRep dereplicate -p 12 -con 10 -comp 50 --S_algorithm fastANI dRep_output_v1 -g input_prokList_v1.txt -d
 
 **6. Make a .fasta and .stb file**: Now, make a new directory with all the winning genomes (in Wdb.csv) and concatenate them into a .fasta file:
 ::
+
  $  cat all_winning_prok_genomes/* > MiFoDB_custom_prok.fasta
 
 Make a .stb file using `parse_stb.py <https://instrain.readthedocs.io/en/master/user_manual.html>`_:
 ::
+
  $  parse_stb.py --reverse -f all_winning_prok_genomes/* -o MiFoDB_custom_prok.stb
 
 **7. Make a gene file**: Finally, use `prodigal <https://github.com/hyattpd/Prodigal/wiki/installation>`_ to make your new gene files:
 ::
+
  $  prodigal -i MiFoDB_custom_prok.fasta -d genes.fna -a genes.faa
 
 These files can now be used to profile your samples.
@@ -84,6 +88,7 @@ Adding eukaryote genomes involves one extra step.
 
 **2. Use EukCC to calculate completeness and contamination**: dRep requires completeness and contamination scores which it cannot calculate for eukaryotes. We will use `Eukcc <https://eukcc.readthedocs.io/en/latest/index.html>`_ (Saary et al. 2020) to calculate eukaryote completeness and contamination. We recommend using the docker container.
 ::
+
  $  docker run -it \
   -v MiFoDB_beta_v2_euk_renamed/:/data/ \
   -v eukcc2_db_ver_1.1:/db/ \
@@ -104,6 +109,7 @@ With the results, make a new .csv file with the completeness and contamination t
 
 **3. Now, run dRep**: where input_eukList_v1.txt contains the complete path to the eukaryote genomes
 ::
+
  $  dRep dereplicate -p 12 -con 100 -comp 50 --S_algorithm fastANI dRep_output_euk_v1 -g input_eukList_v1.txt -d --genomeInfo genome_info.csv --contamination_weight 0
 
 ``Note that the threshold for completeness and contamination differ from prokaryotes. This was done after noticing that some high quality reference genomes had high contamination rate, potentially due some diploid eukaryote genomes. Contamination weight is thus set to 0 minimum.``
@@ -120,10 +126,12 @@ Adding substrate genomes involves fewer steps.
 
 **2. Make a .fasta and .stb file**: Now, make a new directory with all the winning genomes (in Wdb.csv) and concatenate them into a .fasta file:
 ::
+
  $  cat all_winning_prok_genomes/* > MiFoDB_custom_prok.fasta
 
 And finally make a .stb file using `parse_stb.py <https://instrain.readthedocs.io/en/master/user_manual.html>`_:
 ::
+
  $  parse_stb.py --reverse -f all_winning_prok_genomes/* -o MiFoDB_custom_prok.stb
 
 Adding MAGs to database
