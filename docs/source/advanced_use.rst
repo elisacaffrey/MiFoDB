@@ -154,13 +154,11 @@ To assign taxonomy to any prokaryotic bins, you can run  `gtdbtk classify <https
 Or, you can skip classification at this step and incorporate the bins at the respecive "Adding Genomes to Your Custom Database" step above and proceed with downstream dRep analysis. 
 
 Functional Analysis and Gene Profiling
-------------------------------
-
-inStrain profile results are designed to easily perform functional analysis. To look for gene annotations using KEGG Orthologies (KOs), Carbohydrate-Active enZYmes (CAZymes), or Antibiotic Resistance Genes, check out `Gene Annotations <https://github.com/MrOlm/inStrain/blob/master/docs/user_manual.rst#gene-annotation>`_.
+-----------------------------------------------------
+InStrain profile results are designed to easily perform functional analysis. To look for gene annotations using KEGG Orthologies (KOs), Carbohydrate-Active enZYmes (CAZymes), or Antibiotic Resistance Genes, check out `Gene Annotations <https://github.com/MrOlm/inStrain/blob/master/docs/user_manual.rst#gene-annotation>`_.
 
 Strain Tracking
 ------------------------------
-
 In order to perform strain level comparisons and identify shared strains (99.999% popANI), we can use the IS results from instrain profile and the .stb file. More information on inStrain compare  `here <https://instrain.readthedocs.io/en/master/tutorial.html#compare>`_. 
 
 The instraincompare.csv file includes the complete path to the IS directory for each sample:
@@ -175,5 +173,6 @@ The instraincompare.csv file includes the complete path to the IS directory for 
 
 Then run:
 ::
+
  $  inStrain compare -i instraincompare.csv -o instraincompared_IS_results/ -p 6 -s MiFoDB_beta_v2_prok.stb
 
