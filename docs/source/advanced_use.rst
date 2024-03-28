@@ -45,15 +45,21 @@ You can now identify any microbes that are not in MiFoDB that you might be inter
 
 Once you have identified your genomes of interest:
 
-**1. Download reference genomes from NCBI**
+**1. Check that the genomes of interest are not included in the original input set.**: If the genomes is >95% ANI it won't have been used as a representative genomes. This is primarily a problem for eukaryotes, and less for prokaryotes. However, taxonomy might have been updated, so microbes of two different names might now be considered the same species. This step is not as important, but could save you a lot of time.
 
-**2. Run dRep on all genomes**: In order to prevent the inclusion of genomes with >95% ANI or with low completeness and high contamination which might confound your results, you will want to make sure you only include one representative genome for each species. 
+**2. Download all the reference genomes already in MiFoDB_prok or MiFoDB_euk:** These are two .zip files available on https://zenodo.org/records/10870254, named MiFoDB_beta_v2_allprokgenomes.zip
 
-Download all representative prokaryote genomes used in the final MiFoDB here. Then download any genomes of interest and add them to the directory. Finally, run `dRep <https://drep.readthedocs.io/en/latest/installation.html>`_ to identify the representative genomes. input_prokList_v1.txt will include the complete file paths of all the genomes included in this dRep run (current database and newly added genomes).
+**3. Download your new reference genomes of interest from NCBI**
+
+**4. Add your downloaded reference genomes to the MiFoDB_beta_v2_allprokgenomes directory**: You should now have all the genomes from the current database + your additional genomes. Rename the new .fasta files to end in .fa
+
+**5. Run dRep on all genomes**: In order to prevent the inclusion of genomes with >95% ANI or with low completeness and high contamination which might confound your results, you will want to make sure you only include one representative genome for each species. 
+
+Run `dRep <https://drep.readthedocs.io/en/latest/installation.html>`_ to identify the representative genomes from your new input directory. input_prokList_v1.txt will include the complete file paths of all the genomes included in this dRep run (current database and newly added genomes).
 ::
  $  dRep dereplicate -p 12 -con 10 -comp 50 --S_algorithm fastANI dRep_output_v1 -g input_prokList_v1.txt -d
 
-**3. Make a .fasta and .stb file**: Now, make a new directory with all the winning genomes (in Wdb.csv) and concatenate them into a .fasta file:
+**6. Make a .fasta and .stb file**: Now, make a new directory with all the winning genomes (in Wdb.csv) and concatenate them into a .fasta file:
 ::
  $  cat all_winning_prok_genomes/* > MiFoDB_custom_prok.fasta
 
@@ -61,7 +67,7 @@ Make a .stb file using `parse_stb.py <https://instrain.readthedocs.io/en/master/
 ::
  $  parse_stb.py --reverse -f all_winning_prok_genomes/* -o MiFoDB_custom_prok.stb
 
-**3. Make a gene file**: Finally, use `prodigal <https://github.com/hyattpd/Prodigal/wiki/installation>`_ to make your new gene files:
+**7. Make a gene file**: Finally, use `prodigal <https://github.com/hyattpd/Prodigal/wiki/installation>`_ to make your new gene files:
 ::
  $  prodigal -i MiFoDB_custom_prok.fasta -d genes.fna -a genes.faa
 
@@ -71,7 +77,7 @@ These files can now be used to profile your samples.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Adding eukaryote genomes involves one extra step.
 
-**1. Download all genomes**: Download current MiFoDB eukaryote genomes and genomes of interest from NCBI, and add them to the same directory (ex. input_custom_euk_genomes) 
+**1. Download all genomes**: Follow steps 1-4 in the section above, downloading MiFoDB_beta_v2_alleukgenomes.zip from https://zenodo.org/records/10870254
 
 **2. Use EukCC to calculate completeness and contamination**: dRep requires completeness and contamination scores which it cannot calculate for eukaryotes. We will use `Eukcc <https://eukcc.readthedocs.io/en/latest/index.html>`_ (Saary et al. 2020) to calculate eukaryote completeness and contamination. We recommend using the docker container.
 ::
