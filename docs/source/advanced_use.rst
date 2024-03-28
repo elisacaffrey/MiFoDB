@@ -155,10 +155,12 @@ Or, you can skip classification at this step and incorporate the bins at the res
 
 Functional Analysis and Gene Profiling
 ------------------------------
+
 inStrain profile results are designed to easily perform functional analysis. To look for gene annotations using KEGG Orthologies (KOs), Carbohydrate-Active enZYmes (CAZymes), or Antibiotic Resistance Genes, check out `Gene Annotations <https://github.com/MrOlm/inStrain/blob/master/docs/user_manual.rst#gene-annotation>`_.
 
 Strain Tracking
 ------------------------------
+
 In order to perform strain level comparisons and identify shared strains (99.999% popANI), we can use the IS results from instrain profile and the .stb file. More information on inStrain compare  `here <https://instrain.readthedocs.io/en/master/tutorial.html#compare>`_. 
 
 The instraincompare.csv file includes the complete path to the IS directory for each sample:
