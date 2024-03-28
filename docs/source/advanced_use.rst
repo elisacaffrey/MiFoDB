@@ -23,6 +23,7 @@ Details on the use of sylph can be found on their page `Taxonomic profiling with
 
 Select a database (see sylph documentation for appropriate selection)
 ::
+
  $  wget https://storage.googleapis.com/sylph-stuff/v0.3-c1000-gtdb-r214.syldb -O gtdb_database_c1000.syldb
  $  wget https://storage.googleapis.com/sylph-stuff/v0.3-c200-gtdb-r214.syldb -O gtdb_database_c200.syldb
 
@@ -30,10 +31,12 @@ For questions about sylph, contact the sylph authors.
 
 **2. Prepare the sylph sketch of your genome**
 ::
+
  $  sylph sketch -1 EBC_087_1.trim.fastq.gz -2 EBC_087_2.trim.fastq.gz
 
 **3. Finally, use sylph to profile**
 ::
+
  $  sylph profile gtdb_database_c200.syldb *.sylsp -t 10 > EBC_087_sylphprofile.tsv
 
 You can now identify any microbes that are not in MiFoDB that you might be interested in adding to a custom database.
