@@ -12,4 +12,4 @@ We are most thankful to all fermented food sample producers and contributors, in
 Citation
 +++++++++++++++++++++++++
 
-The manuscript describing MiFoDB currently unpublished.
+The manuscript describing MiFoDB is currently unpublished.
