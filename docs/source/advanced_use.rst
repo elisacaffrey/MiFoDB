@@ -145,13 +145,47 @@ For preprocessing of the raw reads, follow the same instruction as in `step-by-s
 **Assembly**: To assemble your MAGs, there are a number of programs that could be used, including `MegaHIT <https://github.com/voutcn/megahit>`_ (Li et al. 2015) or `metaSPAdes <https://github.com/ablab/spades>`_ (Nurk et al. 2017).To use MegaHIT, follow the `basic usage instructions <https://github.com/voutcn/megahit?tab=readme-ov-file#basic-usage>`_.
 The output will include contigs ending in .contig.fa.gz
 
+You can also use `nextflow <https://mifodb.readthedocs.io/en/latest/quick_start.html>`_ to run assembly. 
+
+**1. Prepare an input sheet**: pointing to the preprocessing output. 
+
+.. csv-table:: *processingInfo_v1.csv*
+
+    sample,fastq_1,fastq_2,single_end
+    EBC_087,/location/of/your/trimmed_file/EBC_087_S160_L003_R1.trim.fastq.gz,/location/of/your/file/trimmed_file/EBC_087_S160_L003_R2.trim.fastq.gz,
+
+**2. Run assemble**:
+::
+
+$ nextflow run https://github.com/MrOlm/nf-core-genomeresolvedmetagenomics/main.nf -entry ASSEMBLE --input processingInfo_v1.csv --outdir results_assembly --assemblers "megahit" --max_memory 500GB -resume
+
+The results will be located in a file called megahit/assembly/*.MEGAHIT.fasta.gz
+
+You can now proceed to:
+1. Incorporate these MAGs into a new database (`see Adding genomes to your database <https://mifodb.readthedocs.io/en/latest/advanced_use.html#adding-prokaryote-genomes-to-your-custom-database>`_). First, remember to get a sense of what the new bins might be, using `EukRep <https://github.com/patrickwest/EukRep>`_ (West et al. 2018) to classify whether these bins are likely prokaryotic or eukaryotic. If the reported eukaryote score is > 50% eukaryotic and the genome length is >6Mbp, the bins can be assumed to be eukaryotic. If they don't meet the criteria, they can be assumed to be prokaryotic. Proceed with either `adding them to other prokaryote genomes <https://mifodb.readthedocs.io/en/latest/advanced_use.html#adding-prokaryote-genomes-to-your-custom-database>`_, or adding them to other known `eukaryote genomes <https://mifodb.readthedocs.io/en/latest/advanced_use.html#adding-eukaryote-genomes>`_.
+
+2. If you only want to use your MAGs, proceed to binning below.
+
 **Binning**: Binning was performed with `MetaBAT2 <https://bitbucket.org/berkeleylab/metabat/src>`_ (Kang et al. 2019). MetaBAT2 output will include number of bins, typically starting with the sample name and ending in .fa.gz.
 
-**Classify**: To get a sense of what the new bins might be, first use `EukRep <https://github.com/patrickwest/EukRep>`_ (West et al. 2018) to classify whether these bins are likely prokaryotic or eukaryotic. If the reported eukaryote score is > 50% eukaryotic and the genome length is >6Mbp, the bins can be assumed to be eukaryotic. If they don't meet the criteria, they can be assumed to be prokaryotic. 
+*1. Prepare an input sheet*: pointing to the preprocessing output. 
 
-To assign taxonomy to any prokaryotic bins, you can run  `gtdbtk classify <https://ecogenomics.github.io/GTDBTk/commands/classify.html>`_ . To assign taxonomy to any eukaryotic bins, try using `tRep <https://github.com/MrOlm/tRep>`_ instead to get a potential ID.
+.. csv-table:: *binInfo_v1.csv*
 
-Or, you can skip classification at this step and incorporate the bins at the respecive "Adding Genomes to Your Custom Database" step above and proceed with downstream dRep analysis. 
+    sample,assembly,group,fastq_1,fastq_2,single_end
+    EBC_087,/location/of/your/assembly_file/*_MEGAHIT.fasta.gz,1,/location/of/your/trimmed_file/EBC_087_S160_L003_R1.trim.fastq.gz,/location/of/your/file/trimmed_file/EBC_087_S160_L003_R2.trim.fastq.gz,
+
+The group column can be modified to aid in sample binning. For example, if you are processing dairy and vegetable samples, you might write dairy and vegetable to assist in sample binning, as samples might have more common genomes. 
+
+*2. Run binning*: The nextflow bin command also allows you to classify genomes (see classify below). To do this, make sure to download `gtdbtk <https://ecogenomics.github.io/GTDBTk/commands/classify.html>`_, `tRep <https://github.com/MrOlm/tRep>`_ , and the `checkV <https://pypi.org/project/checkv/#markdown-header-checkv-database>`_ databases, and point to the appropriate files.
+
+::
+
+$ nextflow run https://github.com/MrOlm/nf-core-genomeresolvedmetagenomics/main.nf entry BIN --input binInfo_v1.csv --outdir results_v3 --gtdb /path/to/GTDB/gtdbtk_r207_v2_data.tar.gz --checkv_db /path/to/checkv/checkv-db-v1.2.tar.gz --trep_diamond /path/to/trep/uniref100.translated.diamond.dmnd --trep_ttable /path/to/trep/uniref100.ttable.gz -resume
+
+*The results will be located in a file called megahit/assembly/*.MEGAHIT.fasta.gz*
+
+**Classify**: If you already have MAGs or genomes you are interested in classifying, you can run `gtdbtk <https://ecogenomics.github.io/GTDBTk/commands/classify.html>`_, or `tRep <https://github.com/MrOlm/tRep>`_ to get taxonomic IDs.
 
 Functional Analysis and Gene Profiling
 -----------------------------------------------------
