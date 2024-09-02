@@ -4,7 +4,7 @@ This workflow will walk you through the steps needed to go from getting your dat
 Once the profiles are preprocessed, you will be able to choose whether to run them against the prokaryote database, eukaryote database, substrate database, or all three and then combine the results.
 As an example, we can use reads from a sample of pikliz, a Haitian ferment with cabbage, carrots, bell peppers and Scotch bonnet peppers, produced in Montana, USA.
 
-Pre-processing
+Pre-processing *STEP-BY-STEP*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 **Expected input:** Raw paired end reads (ex. ending in R1.fastq.gz and R2.fastq.gz)
@@ -67,10 +67,12 @@ Finally, prepare the human reference genome, and then run bbmap:
 
 **4.** Save output to ``processed_reads`` directory
 
-Pre-processing SHORTCUT
+Pre-processing *SHORTCUT*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+If instead of performing each step you want to only run one command, you can always use nextflow, a workflow management system. Matt Olm has developed a nextflow pipeline to perform genome resolved metagenomics, which includes all steps outlined above. In order to run nextflow
+::
 
-
+$ nextflow run https://github.com/MrOlm/nf-genomeresolvedmetagenomics -entry PREPROCESSREADS --input 08202024_basicInfo_v1.csv -with-report v1 --outdir results_v1/
 
 Profiling
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
