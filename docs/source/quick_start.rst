@@ -1,11 +1,11 @@
-Quick Start
+Step-By-Step Manual
 ===================
 This workflow will walk you through the steps needed to go from getting your data back from a sequencing facility to having a profiled list of genomes.
 Once the profiles are preprocessed, you will be able to choose whether to run them against the prokaryote database, eukaryote database, substrate database, or all three and then combine the results.
 
 As an example, we can use reads from a sample of pikliz, a Haitian ferment with cabbage, carrots, bell peppers and Scotch bonnet peppers, produced in Montana, USA.
 
-Pre-processing *STEP-BY-STEP*
+Pre-processing
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 **Expected input:** Raw paired end reads (ex. ending in R1.fastq.gz and R2.fastq.gz)
