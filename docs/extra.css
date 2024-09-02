@@ -1,3 +1,20 @@
 .wy-nav-side {
     background-color: #9fa91f !important;
 }
+
+body {
+    background-color: #f5f5f5;  /* Change the background color */
+    color: #333333;  /* Change the text color */
+}
+
+a {
+    color: #1a73e8;  /* Change the link color */
+}
+
+.wy-nav-content {
+    background-color: #ffffff;  /* Change the content background color */
+}
+
+.wy-nav-top {
+    background-color: #1a1a1a;  /* Change the top navigation bar background color */
+}
