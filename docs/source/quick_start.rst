@@ -4,6 +4,11 @@ This workflow will walk you through the steps needed to go from getting your dat
 Once the profiles are preprocessed, you will be able to choose whether to run them against the prokaryote database, eukaryote database, substrate database, or all three and then combine the results.
 As an example, we can use reads from a sample of pikliz, a Haitian ferment with cabbage, carrots, bell peppers and Scotch bonnet peppers, produced in Montana, USA.
 
+The pikliz reads are available for download on `Zenodo <https://zenodo.org/records/10881265>`_ or directly through these links: 
+
+`EBC_087_S160_L003_R1 <https://zenodo.org/records/10881265/files/EBC_087_S160_L003_R1.fastq.gz?download=1>`_
+
+`EBC_087_S160_L003_R2 <https://zenodo.org/records/10881265/files/EBC_087_S160_L003_R2.fastq.gz?download=1>`_
 
 Pre-processing
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
