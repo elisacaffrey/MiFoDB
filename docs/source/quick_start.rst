@@ -33,9 +33,10 @@ Note:common errors include pointing to the incorrect location, or accidentally i
 
 $ vi -c ":set nobomb" -c ":wq" basicInfo_v1.csv
 
-The resulting trimmed files, ending in .trim.fastq.gz will be in results_v1/fastp/*.trim.fastq.gz
+.. Results::
 
-Read metrics will be included in results_v1/basicinfo/basic_info_final.csv
+    The resulting trimmed files, ending in .trim.fastq.gz will be in results_v1/fastp/*.trim.fastq.gz
+    Read metrics will be included in results_v1/basicinfo/basic_info_final.csv
 
 Profile with nextflow
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
