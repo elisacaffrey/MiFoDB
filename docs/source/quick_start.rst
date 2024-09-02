@@ -11,8 +11,7 @@ Pre-processing
 
 **Expected output:** Trimmed paired end reads (ex. ending in _1.trim.fastq.gz and _2.trim.fastq.gz)
 
-**1. Download the example raw reads**
-Download reads from `Zenodo <https://zenodo.org/records/10881265>`_ or directly through these links: 
+**1. Download the raw reads** from `Zenodo <https://zenodo.org/records/10881265>`_ or directly through these links: 
 
 `EBC_087_S160_L003_R1 <https://zenodo.org/records/10881265/files/EBC_087_S160_L003_R1.fastq.gz?download=1>`_
 
