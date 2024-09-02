@@ -23,6 +23,7 @@ Contents
 
    overview
    quick_start
+   nextflow_shortcut
    example_output
    advanced_use
    acknowledgements
