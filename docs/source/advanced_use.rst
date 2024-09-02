@@ -3,7 +3,7 @@ Advanced Use
 
 Creating a custom MiFoDB
 ------------------------------
-While the latest version of MiFoDB (`MiFoDB_beta_v2 <https://docs.google.com/spreadsheets/d/1PHRlb9YwKiwpVk8ChozBZbFYCA-VL3EXJTIPI-TI04A/edit?usp=sharing>`_)  includes 675 genomes (586 prokaryote, 82 eukaryote, and 7 substrate genomes), there will be a number of cases in which you might want to add custom genomes. 
+While the latest version of `MiFoDB <https://zenodo.org/records/10881265/files/MiFoDB_beta_v2_allRef.csv?download=1>`_)  includes 675 genomes (586 prokaryote, 82 eukaryote, and 7 substrate genomes), there will be a number of cases in which you might want to add custom genomes. 
 
 There are a few recommended ways of doing this, depending on genome type. 
 
