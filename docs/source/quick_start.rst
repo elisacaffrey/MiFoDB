@@ -27,16 +27,16 @@ If you are pre-processing multiple files at once, you can add one sample to each
 
 $ nextflow run https://github.com/MrOlm/nf-genomeresolvedmetagenomics -entry PREPROCESSREADS --input basicInfo_v1.csv -with-report v1 --outdir results_v1/
 
+The resulting trimmed files, ending in .trim.fastq.gz will be in results_v1/fastp/*.trim.fastq.gz
 
-Note:common errors include pointing to the incorrect location, or accidentally including additional empty lines in your .csv file. Additionally, depending on how the .csv file is, a byte order mark (BOM) might need to be removed before running. To do that, in your terminal in the directory with the basicInfo.csv file run:
-::
+Read metrics will be included in results_v1/basicinfo/basic_info_final.csv
 
-$ vi -c ":set nobomb" -c ":wq" basicInfo_v1.csv
+.. tip::
+    common errors include pointing to the incorrect location, or accidentally including additional empty lines in your .csv file. Additionally, depending on how the .csv file is, a byte order mark
+    (BOM) might need to be removed before running. To do that, in your terminal in the directory with the basicInfo.csv file run:
+    ::
 
-.. results::
-
-    The resulting trimmed files, ending in .trim.fastq.gz will be in results_v1/fastp/*.trim.fastq.gz
-    Read metrics will be included in results_v1/basicinfo/basic_info_final.csv
+    $ vi -c ":set nobomb" -c ":wq" basicInfo_v1.csv
 
 Profile with nextflow
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
