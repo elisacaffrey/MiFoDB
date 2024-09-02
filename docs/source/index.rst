@@ -22,8 +22,8 @@ Contents
    :maxdepth: 2
 
    overview
+   step_by_step
    quick_start
-   nextflow_shortcut
    example_output
    advanced_use
    acknowledgements
