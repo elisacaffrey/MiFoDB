@@ -32,6 +32,7 @@ Link to Zenodo: https://zenodo.org/records/10870254
 
 **MiFoDB_beta_v2_alleukgenomes.zip**: directory of all eukaryote genomes as .fa files used in the final version of MiFoDB_beta_v2.
 
+**Caffreyetal2024_MiFoDB_MAGs.zip**: all MAGs generated in this study.
 
 For a full list of genomes included in each database, see the `MiFoDB reference <https://docs.google.com/spreadsheets/d/1PHRlb9YwKiwpVk8ChozBZbFYCA-VL3EXJTIPI-TI04A/edit?usp=sharing>`_ and check the database column. 
 
