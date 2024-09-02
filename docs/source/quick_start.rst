@@ -35,10 +35,9 @@ Read metrics will be included in results_v1/basicinfo/basic_info_final.csv
 
     common errors include pointing to the incorrect location, or accidentally including additional empty lines in your .csv file. Additionally, depending on how the .csv file is, a byte order mark
     (BOM) might need to be removed before running. To do that, in your terminal in the directory with the basicInfo.csv file run:
-    
-::
+    ::
 
-    $ vi -c ":set nobomb" -c ":wq" basicInfo_v1.csv
+        $ vi -c ":set nobomb" -c ":wq" basicInfo_v1.csv
 
 Profile with nextflow
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
