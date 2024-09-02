@@ -4,12 +4,6 @@ This workflow will walk you through the steps needed to go from getting your dat
 Once the profiles are preprocessed, you will be able to choose whether to run them against the prokaryote database, eukaryote database, substrate database, or all three and then combine the results.
 As an example, we can use reads from a sample of pikliz, a Haitian ferment with cabbage, carrots, bell peppers and Scotch bonnet peppers, produced in Montana, USA.
 
-The pikliz reads are available for download on `Zenodo <https://zenodo.org/records/10881265>`_ or directly through these links: 
-
-`EBC_087_S160_L003_R1 <https://zenodo.org/records/10881265/files/EBC_087_S160_L003_R1.fastq.gz?download=1>`_
-
-`EBC_087_S160_L003_R2 <https://zenodo.org/records/10881265/files/EBC_087_S160_L003_R2.fastq.gz?download=1>`_
-
 Pre-processing
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -18,9 +12,12 @@ Pre-processing
 **Expected output:** Trimmed paired end reads (ex. ending in _1.trim.fastq.gz and _2.trim.fastq.gz)
 
 **1. Download the example raw reads**
-::
+Download reads from `Zenodo <https://zenodo.org/records/10881265>`_ or directly through these links: 
 
- $  wget -P Data http://sra-download.ncbi.nlm.nih.gov/srapub/SRR28502160
+`EBC_087_S160_L003_R1 <https://zenodo.org/records/10881265/files/EBC_087_S160_L003_R1.fastq.gz?download=1>`_
+
+`EBC_087_S160_L003_R2 <https://zenodo.org/records/10881265/files/EBC_087_S160_L003_R2.fastq.gz?download=1>`_
+
 
 **2. Perform FastQC**
 
@@ -70,6 +67,11 @@ Finally, prepare the human reference genome, and then run bbmap:
  $  bbmap.sh in=EBC_087_repair_1.fastq.gz in2=EBC_087_repair_2.fastq.gz out=EBC_087_trim_1.fastq.gz out2=EBC_087_trim_2.fastq.gz ref=hg38.fa nodisk
 
 **4.** Save output to ``processed_reads`` directory
+
+Pre-processing SHORTCUT
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 
 Profiling
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
