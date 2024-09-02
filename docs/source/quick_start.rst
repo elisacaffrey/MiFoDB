@@ -1,4 +1,4 @@
-Step-By-Step Manual
+Step-By-Step Guide
 ===================
 This workflow will walk you through the steps needed to go from getting your data back from a sequencing facility to having a profiled list of genomes.
 Once the profiles are preprocessed, you will be able to choose whether to run them against the prokaryote database, eukaryote database, substrate database, or all three and then combine the results.
