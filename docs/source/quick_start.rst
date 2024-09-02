@@ -43,14 +43,32 @@ Read metrics will be included in results_v1/basicinfo/basic_info_final.csv
 
 Profile with nextflow
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-**1. Prepare your input file**: you will now make a new input file, pointing to the processed results your just generated. 
+**1. Prepare your input file**: you will now make a new input file, pointing to the processed results your just generated. This will include 4 columns called sample, fastq_1, fastq_2, and single_end. In this case, single_end is left blank.
 
+.. csv-table:: *preprocessingInfo_v1.csv*
+
+    sample,fastq_1,fastq_2,single_end
+    EBC_087,/location/of/your/trimmed_file//EBC_087_S160_L003_R1.trim.fastq.gz,/location/of/your/file/raw_reads/EBC_087_S160_L003_R2.trim.fastq.gz,
+::
+
+You may need to run:
+::
+
+        $ vi -c ":set nobomb" -c ":wq" preprocessingInfo_v1.csv
+
+**2. Run profile:** MiFoDB_beta_v3_prok.fasta, MiFoDB_beta_v3_prok.stb and MiFoDB_beta_v3_prok.genes.fna can all be found on `Zenodo <https://zenodo.org/records/10881265>`_. Alternatively, you can use a `custom database <https://mifodb.readthedocs.io/en/latest/advanced_use.html#creating-a-custom-mifodb>`_.
 
 ::
-nextflow run /home/mattolm/user_data/Nextflow/nf-core-genomeresolvedmetagenomics/main.nf -entry PROFILE --input 08202024_processingInfo_v2.csv -with-report report.html --outdir results_prok_v1 --fasta s3://sonn-highavail/databases/MiFoDB/MiFoDB_beta/MiFoDB_beta_v3/MiFoDB_beta_v3_prok.fasta --stb_file s3://sonn-highavail/databases/MiFoDB/MiFoDB_beta/MiFoDB_beta_v3/MiFoDB_beta_v3_prok.stb --genes_file s3://sonn-highavail/databases/MiFoDB/MiFoDB_beta/MiFoDB_beta_v3/MiFoDB_beta_v3_prok.genes.fna --instrain_profile_args " --database_mode --skip_plot_generation"
 
-Then, run with new euk database:
-nextflow run /home/mattolm/user_data/Nextflow/nf-core-genomeresolvedmetagenomics/main.nf -entry PROFILE --input 08202024_processingInfo_v2.csv -with-report report_euk.html --outdir results_euk_v1 --fasta s3://sonn-highavail/databases/MiFoDB/MiFoDB_beta/MiFoDB_beta_v3/MiFoDB_beta_vhm_v3_euk.fasta --stb_file s3://sonn-highavail/databases/MiFoDB/MiFoDB_beta/MiFoDB_beta_v3/MiFoDB_beta_vhm_v3_euk.stb --instrain_profile_args " --database_mode --skip_plot_generation"
+$ nextflow run /home/mattolm/user_data/Nextflow/nf-core-genomeresolvedmetagenomics/main.nf -entry PROFILE --input processingInfo_v1.csv -with-report report.html --outdir results_prok_v1 --fasta path/to/MiFoDB_beta_v3_prok.fasta --stb_file path/to/MiFoDB_beta_v3_prok.stb --genes_file path/to/MiFoDB_beta_v3_prok.genes.fna --instrain_profile_args " --database_mode --skip_plot_generation"
 
-And finally run with new substrate bd:
-nextflow run https://github.com/MrOlm/nf-genomeresolvedmetagenomics -entry PROFILE --input 08202024_processingInfo_v2.csv -with-report report_sub_v1.html --outdir results_sub_v1 --fasta s3://sonn-highavail/databases/FeFoDB/substrate_genomes.fasta --stb_file s3://sonn-highavail/databases/FeFoDB/substrate_genomes.stb --instrain_profile_args " --database_mode --skip_plot_generation" --coverm
+**3. Run additional profiling databases:** you can also run the eukaryote microbe and substrate mapping. Each have slight differences in the commands, but use the same input sheet.
+
+::
+
+$ nextflow run /home/mattolm/user_data/Nextflow/nf-core-genomeresolvedmetagenomics/main.nf -entry PROFILE --input processingInfo_v1.csv -with-report report_euk.html --outdir results_euk_v1 --fasta path/to/MiFoDB_beta_vhm_v3_euk.fasta --stb_file path/to/MiFoDB_beta_vhm_v3_euk.stb --instrain_profile_args " --database_mode --skip_plot_generation"
+
+And finally run with the substrate database:
+::
+
+$ nextflow run https://github.com/MrOlm/nf-genomeresolvedmetagenomics -entry PROFILE --input processingInfo_v1.csv -with-report report_sub_v1.html --outdir results_sub_v1 --fasta path/to/substrate_genomes.fasta --stb_file path/to/substrate_genomes.stb --instrain_profile_args " --database_mode --skip_plot_generation" --coverm
