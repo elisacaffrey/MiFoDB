@@ -56,4 +56,15 @@ There are a few methods to help increase the percentage of mapped genomes:
 
 **2. Deeper sequencing for discovery of novel genomes**: While we incorporate a majority of reference genomes into our database, a number of newly assembled and binned MAGs were also identified. There are likely a number of novel microbial genomes in fermented foods. However, due to lower sequencing depth, might meet coverage requirements for assembly. Performing deeper sequencing (>5Gb/sample), would allow for higher coverage and breadth of understudied genomes, allowing for further novel MAG identification.
 
+*Run Time Information*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Run times were calculated for an average sample. 
+
+In this paper, all reads were stored and run on aws s3.
+
+* Preprocessing: 20min-1hour/sample average run time.
+* Processing: 1 hour/sample average run time. Run time will depend on sample complexity. Samples which are primarily expected to be eukaryote will have a shorter average run time when profiling against MiFoDB_prok, and a longer average run time compared to MiFoDB_euk.
+
+
 
