@@ -41,6 +41,8 @@ Read metrics will be included in results_v1/basicinfo/basic_info_final.csv
 
         $ vi -c ":set nobomb" -c ":wq" basicInfo_v1.csv
 
+*`More on runtime info <https://mifodb.readthedocs.io/en/latest/overview.html>`_*
+
 Profile with nextflow
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 **1. Prepare your input file**: you will now make a new input file, pointing to the processed results your just generated. This will include 4 columns called sample, fastq_1, fastq_2, and single_end. In this case, single_end is left blank.
