@@ -127,12 +127,12 @@ Adding substrate genomes involves fewer steps.
 **2. Make a .fasta and .stb file**: Now, make a new directory with all the winning genomes (in Wdb.csv) and concatenate them into a .fasta file:
 ::
 
- $  cat all_winning_prok_genomes/* > MiFoDB_custom_prok.fasta
+ $  cat all_substrate_genomes/* > MiFoDB_custom_sub.fasta
 
 And finally make a .stb file using `parse_stb.py <https://instrain.readthedocs.io/en/master/user_manual.html>`_:
 ::
 
- $  parse_stb.py --reverse -f all_winning_prok_genomes/* -o MiFoDB_custom_prok.stb
+ $  parse_stb.py --reverse -f all_substrate_genomes/* -o all_substrate_genomes.stb
 
 Adding MAGs to database
 ------------------------------
