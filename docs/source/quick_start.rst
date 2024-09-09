@@ -1,6 +1,6 @@
 Quick Start
 ===================
-Another way to work through this workflow is by using nextflow, a workflow management system. `Matt Olm <https://github.com/MrOlm/nf-genomeresolvedmetagenomics>`_ has developed a nextflow pipeline to perform genome resolved metagenomics, which includes all steps outlined in the `step-by-step <https://mifodb.readthedocs.io/en/latest/step_by_step.html>`_ guide. 
+The simplest way to run MiFoDB is using nextflow, a workflow management system. `Matt Olm <https://github.com/MrOlm/nf-genomeresolvedmetagenomics>`_ has developed a nextflow pipeline to perform genome resolved metagenomics, which includes all steps outlined in the `step-by-step <https://mifodb.readthedocs.io/en/latest/step_by_step.html>`_ guide. 
 
 To run nextflow, you must first install `nextflow <https://www.nextflow.io/docs/latest/install.html#install-nextflow>`_, following the outlined instructions.
 Instructions are also available `here <https://github.com/MrOlm/nf-genomeresolvedmetagenomics?tab=readme-ov-file#quick-start>`_.
@@ -74,3 +74,9 @@ And finally run with the substrate database:
 ::
 
 $ nextflow run https://github.com/MrOlm/nf-genomeresolvedmetagenomics -entry PROFILE --input processingInfo_v1.csv -with-report report_sub_v1.html --outdir results_sub_v1 --fasta path/to/substrate_genomes.fasta --stb_file path/to/substrate_genomes.stb --instrain_profile_args " --database_mode --skip_plot_generation" --coverm
+
+.. tip::
+
+    If your substrate is not in the default MiFoDB_sub database, or you will be using this frequently, we recommend making a `custom substrate database <https://mifodb.readthedocs.io/en/latest/advanced_use.html#adding-substrate-genomes>`_. Substrate genomes, like *Brassica oleracea* and *Bos taurus* are much much larger and more complex compared to prokaryote (and most eukaryotic microbes), which increasing the rate of false-positive mapping.
+
+    
