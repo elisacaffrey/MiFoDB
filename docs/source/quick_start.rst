@@ -77,6 +77,6 @@ $ nextflow run https://github.com/MrOlm/nf-genomeresolvedmetagenomics -entry PRO
 
 .. tip::
 
-    If your substrate is not in the default MiFoDB_sub database, or you will be using this frequently, we recommend making a `custom substrate database <https://mifodb.readthedocs.io/en/latest/advanced_use.html#adding-substrate-genomes>`_. Substrate genomes, like *Brassica oleracea* and *Bos taurus* are much much larger and more complex compared to prokaryote (and most eukaryotic microbes), which increasing the rate of false-positive mapping.
+    If your substrate is not in the default MiFoDB_sub database, or you will be using this frequently, we recommend making a `custom substrate database <https://mifodb.readthedocs.io/en/latest/advanced_use.html#adding-substrate-genomes>`_. Substrate genomes, like *Brassica oleracea* and *Bos taurus* are much much larger and more complex compared to prokaryote (and most eukaryotic microbes), which increases the rate of false-positive mapping, so we recommend limiting substrate genomes to those that are relevant to the project.
 
     
