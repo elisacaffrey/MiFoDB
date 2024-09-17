@@ -8,7 +8,9 @@ This upload contains several datasets to support the publication "MiFoDB, a work
 
 Zenodo Content Directory
 +++++++++++++++
-Link to Zenodo: https://zenodo.org/records/10870254
+Link to Zenodo: https://zenodo.org/records/13766023
+
+**MiFoDB_gamma_v1_prok.zip**: contains the fasta, stb, and gene file and mapping file for the latest version of MiFoDB_prok (MiFoDB_gamma_v1), which includes 1294 representative genomes from this data set plus data from Carlino et al. 2024
 
 **MiFoDB_beta_v2_prok.fasta**: fasta file of all concatenated representative prokaryote genomes in database. Use included inStrain. 
 
