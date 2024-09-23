@@ -35,7 +35,7 @@ Link to Zenodo: https://zenodo.org/records/13766023
 **MiFoDB_beta_v2.zip**: Includes the following files used in profiling of results published in the paper:
  * MiFoDB_beta_v2_prok.fasta: fasta file of all concatenated representative prokaryote genomes in database. 
  * MiFoDB_beta_v2_prok.stb: scaffold-to-bin file for the prokaryote genomes in database.
- * MiFoDB_beta_v2_prok.genes.fna: prodigal output for prokaryote genomes reference in database. Use included inStrain for gene annotations.
+ * MiFoDB_beta_v2_prok.genes.fna: prodigal output for prokaryote genomes reference in database.
  * MiFoDB_beta_v2_euk.fasta: fasta file of all concatenated representative eukaryote microorganism genomes in database. 
  * MiFoDB_beta_v2_euk.stb: scaffold-to-bin file for the eukaryote microorganism genomes in database. 
  * MiFoDB_beta_v1_sub.fasta: fasta file of all concatenated representative substrate genomes in database. 
