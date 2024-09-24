@@ -16,7 +16,7 @@ Link to Zenodo: https://zenodo.org/records/13830159
 
 **MiFoDB_beta_v2.zip**: Includes the following files used in profiling of results published in the paper.
 
-* MiFoDB_beta_v2_prok.fasta: fasta file of all concatenated representative prokaryote genomes in database. 
+ * MiFoDB_beta_v2_prok.fasta: fasta file of all concatenated representative prokaryote genomes in database. 
  * MiFoDB_beta_v2_prok.stb: scaffold-to-bin file for the prokaryote genomes in database.
  * MiFoDB_beta_v2_prok.genes.fna: prodigal output for prokaryote genomes reference in database.
  * MiFoDB_beta_v2_euk.fasta: fasta file of all concatenated representative eukaryote microorganism genomes in database. 
@@ -32,7 +32,7 @@ Link to Zenodo: https://zenodo.org/records/13830159
 
 **MiFoDB_beta_v3.zip**: Includes the following files updated with new prokaryotic (939 representative) and eukaryotic (99 representative) genomes.
 
-* MiFoDB_beta_v3_prok.fasta: fasta file of all 939 concatenated representative prokaryote genomes in database. 
+ * MiFoDB_beta_v3_prok.fasta: fasta file of all 939 concatenated representative prokaryote genomes in database. 
  * MiFoDB_beta_v3_prok.stb: scaffold-to-bin file for the 939 prokaryote genomes in database. 
  * MiFoDB_beta_v3_prok.genes.fna: prodigal output for 939 prokaryote genomes reference in database. 
  * MiFoDB_beta_v3_euk.fasta: fasta file of all 99 concatenated representative eukaryote microorganism genomes in database. 
