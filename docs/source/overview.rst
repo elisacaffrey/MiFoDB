@@ -64,7 +64,8 @@ Run times were calculated for an average sample. In this paper, all reads were s
 * Preprocessing: 20min-1hour/sample average run time.
 * Processing: 1 hour/sample average run time. Run time will depend on sample complexity. Samples which are primarily expected to be eukaryote will have a shorter average run time when profiling against MiFoDB_prok, and a longer average run time compared to MiFoDB_euk.
 
+As noted in the `inStrain User Manual <https://instrain.readthedocs.io/en/v1.3.0/Advanced_use.html#adjusting-parameters>`_, "The runtime (in minutes) is 13 times the number of read base pairs in the input .bam file (in Gbp)."
 
-To generate run time statistics, see details in the `inStrain user manual <https://instrain.readthedocs.io/en/latest/user_manual.html#other>`_.  
+To generate run time statistics, see `details here <https://instrain.readthedocs.io/en/latest/user_manual.html#other>`_.  
 
 
